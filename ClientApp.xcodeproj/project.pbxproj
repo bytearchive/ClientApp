@@ -1,0 +1,602 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		B84932F7188EEAAC00C06437 /* AuthTokenService.m in Sources */ = {isa = PBXBuildFile; fileRef = B84932F4188EEAAC00C06437 /* AuthTokenService.m */; };
+		B84932FB188EEB1D00C06437 /* AuthenticatedRequestProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = B84932FA188EEB1D00C06437 /* AuthenticatedRequestProvider.m */; };
+		B8493327188EF0B500C06437 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B8493326188EF0B500C06437 /* AppDelegate.m */; };
+		B849333C188EF0C900C06437 /* LoginController.m in Sources */ = {isa = PBXBuildFile; fileRef = B849332F188EF0C900C06437 /* LoginController.m */; };
+		B849333D188EF0C900C06437 /* LoginController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B8493330188EF0C900C06437 /* LoginController.xib */; };
+		B8493345188EF15E00C06437 /* AuthTokenDeserializer.m in Sources */ = {isa = PBXBuildFile; fileRef = B8493344188EF15E00C06437 /* AuthTokenDeserializer.m */; };
+		B862419D188C2AA400DB172C /* libDeferred.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B8624193188C2A6F00DB172C /* libDeferred.a */; };
+		B86241EC188EAB1600DB172C /* DomainObjectClient.m in Sources */ = {isa = PBXBuildFile; fileRef = B86241E4188EAB1600DB172C /* DomainObjectClient.m */; };
+		B86241ED188EAB1600DB172C /* HTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = B86241E6188EAB1600DB172C /* HTTPClient.m */; };
+		B86241EE188EAB1600DB172C /* JSONClient.m in Sources */ = {isa = PBXBuildFile; fileRef = B86241E8188EAB1600DB172C /* JSONClient.m */; };
+		B86241EF188EAB1600DB172C /* RequestProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = B86241EA188EAB1600DB172C /* RequestProvider.m */; };
+		B8624216188EAC7D00DB172C /* AuthTokenRepository.m in Sources */ = {isa = PBXBuildFile; fileRef = B8624213188EAC7D00DB172C /* AuthTokenRepository.m */; };
+		B89306DC1854E8CE00F3D74F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B89306DB1854E8CE00F3D74F /* Foundation.framework */; };
+		B89306DE1854E8CE00F3D74F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B89306DD1854E8CE00F3D74F /* CoreGraphics.framework */; };
+		B89306E01854E8CE00F3D74F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B89306DF1854E8CE00F3D74F /* UIKit.framework */; };
+		B89306E61854E8CE00F3D74F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B89306E41854E8CE00F3D74F /* InfoPlist.strings */; };
+		B89306E81854E8CE00F3D74F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B89306E71854E8CE00F3D74F /* main.m */; };
+		B89306F41854E8CE00F3D74F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B89306F31854E8CE00F3D74F /* Images.xcassets */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		B8493323188EEF7B00C06437 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B862418B188C2A6E00DB172C /* Deferred.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = E18A7B1415674D9B0083D745;
+			remoteInfo = Deferred;
+		};
+		B8624192188C2A6F00DB172C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B862418B188C2A6E00DB172C /* Deferred.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = E18A7B1515674D9B0083D745;
+			remoteInfo = Deferred;
+		};
+		B8624194188C2A6F00DB172C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B862418B188C2A6E00DB172C /* Deferred.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = E18A7B3015674EC20083D745;
+			remoteInfo = "Deferred-OSX";
+		};
+		B8624196188C2A6F00DB172C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B862418B188C2A6E00DB172C /* Deferred.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = E18A7B4415674ED10083D745;
+			remoteInfo = Specs;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		B84932F3188EEAAC00C06437 /* AuthTokenService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AuthTokenService.h; sourceTree = "<group>"; };
+		B84932F4188EEAAC00C06437 /* AuthTokenService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AuthTokenService.m; sourceTree = "<group>"; };
+		B84932F9188EEB1D00C06437 /* AuthenticatedRequestProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AuthenticatedRequestProvider.h; sourceTree = "<group>"; };
+		B84932FA188EEB1D00C06437 /* AuthenticatedRequestProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AuthenticatedRequestProvider.m; sourceTree = "<group>"; };
+		B8493325188EF0B500C06437 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		B8493326188EF0B500C06437 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		B849332E188EF0C900C06437 /* LoginController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginController.h; sourceTree = "<group>"; };
+		B849332F188EF0C900C06437 /* LoginController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginController.m; sourceTree = "<group>"; };
+		B8493330188EF0C900C06437 /* LoginController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginController.xib; sourceTree = "<group>"; };
+		B8493343188EF15E00C06437 /* AuthTokenDeserializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AuthTokenDeserializer.h; sourceTree = "<group>"; };
+		B8493344188EF15E00C06437 /* AuthTokenDeserializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AuthTokenDeserializer.m; sourceTree = "<group>"; };
+		B862418B188C2A6E00DB172C /* Deferred.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Deferred.xcodeproj; path = deferred/Deferred.xcodeproj; sourceTree = "<group>"; };
+		B86241E2188EAB1600DB172C /* Deserializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Deserializer.h; sourceTree = "<group>"; };
+		B86241E3188EAB1600DB172C /* DomainObjectClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DomainObjectClient.h; sourceTree = "<group>"; };
+		B86241E4188EAB1600DB172C /* DomainObjectClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DomainObjectClient.m; sourceTree = "<group>"; };
+		B86241E5188EAB1600DB172C /* HTTPClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTTPClient.h; sourceTree = "<group>"; };
+		B86241E6188EAB1600DB172C /* HTTPClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTTPClient.m; sourceTree = "<group>"; };
+		B86241E7188EAB1600DB172C /* JSONClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONClient.h; sourceTree = "<group>"; };
+		B86241E8188EAB1600DB172C /* JSONClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONClient.m; sourceTree = "<group>"; };
+		B86241E9188EAB1600DB172C /* RequestProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RequestProvider.h; sourceTree = "<group>"; };
+		B86241EA188EAB1600DB172C /* RequestProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RequestProvider.m; sourceTree = "<group>"; };
+		B86241EB188EAB1600DB172C /* Serializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Serializer.h; sourceTree = "<group>"; };
+		B8624212188EAC7D00DB172C /* AuthTokenRepository.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AuthTokenRepository.h; sourceTree = "<group>"; };
+		B8624213188EAC7D00DB172C /* AuthTokenRepository.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AuthTokenRepository.m; sourceTree = "<group>"; };
+		B89306D81854E8CE00F3D74F /* ClientApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ClientApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B89306DB1854E8CE00F3D74F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		B89306DD1854E8CE00F3D74F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		B89306DF1854E8CE00F3D74F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		B89306E31854E8CE00F3D74F /* ClientApp-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ClientApp-Info.plist"; sourceTree = "<group>"; };
+		B89306E51854E8CE00F3D74F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		B89306E71854E8CE00F3D74F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		B89306E91854E8CE00F3D74F /* ClientApp-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ClientApp-Prefix.pch"; sourceTree = "<group>"; };
+		B89306F31854E8CE00F3D74F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		B89306FA1854E8CE00F3D74F /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B89306D51854E8CE00F3D74F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B89306DC1854E8CE00F3D74F /* Foundation.framework in Frameworks */,
+				B89306DE1854E8CE00F3D74F /* CoreGraphics.framework in Frameworks */,
+				B89306E01854E8CE00F3D74F /* UIKit.framework in Frameworks */,
+				B862419D188C2AA400DB172C /* libDeferred.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		B84932E3188EE97100C06437 /* Mappers */ = {
+			isa = PBXGroup;
+			children = (
+				B8493343188EF15E00C06437 /* AuthTokenDeserializer.h */,
+				B8493344188EF15E00C06437 /* AuthTokenDeserializer.m */,
+			);
+			path = Mappers;
+			sourceTree = "<group>";
+		};
+		B84932F2188EEA4300C06437 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				B84932F3188EEAAC00C06437 /* AuthTokenService.h */,
+				B84932F4188EEAAC00C06437 /* AuthTokenService.m */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		B84932FC188EEB2700C06437 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				B8493319188EEB7C00C06437 /* AppDelegate */,
+				B84932FD188EEB5700C06437 /* Controllers */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		B84932FD188EEB5700C06437 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				B849332E188EF0C900C06437 /* LoginController.h */,
+				B849332F188EF0C900C06437 /* LoginController.m */,
+				B8493330188EF0C900C06437 /* LoginController.xib */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		B8493319188EEB7C00C06437 /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				B8493325188EF0B500C06437 /* AppDelegate.h */,
+				B8493326188EF0B500C06437 /* AppDelegate.m */,
+			);
+			path = AppDelegate;
+			sourceTree = "<group>";
+		};
+		B862418A188C2A1100DB172C /* Externals */ = {
+			isa = PBXGroup;
+			children = (
+				B862418B188C2A6E00DB172C /* Deferred.xcodeproj */,
+			);
+			path = Externals;
+			sourceTree = "<group>";
+		};
+		B862418C188C2A6E00DB172C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B8624193188C2A6F00DB172C /* libDeferred.a */,
+				B8624195188C2A6F00DB172C /* libDeferred-OSX.a */,
+				B8624197188C2A6F00DB172C /* Specs */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B86241E1188EAA9E00DB172C /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				B84932F9188EEB1D00C06437 /* AuthenticatedRequestProvider.h */,
+				B84932FA188EEB1D00C06437 /* AuthenticatedRequestProvider.m */,
+				B86241E2188EAB1600DB172C /* Deserializer.h */,
+				B86241E3188EAB1600DB172C /* DomainObjectClient.h */,
+				B86241E4188EAB1600DB172C /* DomainObjectClient.m */,
+				B86241E5188EAB1600DB172C /* HTTPClient.h */,
+				B86241E6188EAB1600DB172C /* HTTPClient.m */,
+				B86241E7188EAB1600DB172C /* JSONClient.h */,
+				B86241E8188EAB1600DB172C /* JSONClient.m */,
+				B86241E9188EAB1600DB172C /* RequestProvider.h */,
+				B86241EA188EAB1600DB172C /* RequestProvider.m */,
+				B86241EB188EAB1600DB172C /* Serializer.h */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		B8624210188EAC1A00DB172C /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				B84932E3188EE97100C06437 /* Mappers */,
+				B8624218188EAC9600DB172C /* Models */,
+				B8624211188EAC3900DB172C /* Repositories */,
+				B84932F2188EEA4300C06437 /* Services */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		B8624211188EAC3900DB172C /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				B8624212188EAC7D00DB172C /* AuthTokenRepository.h */,
+				B8624213188EAC7D00DB172C /* AuthTokenRepository.m */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		B8624218188EAC9600DB172C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		B89306CF1854E8CE00F3D74F = {
+			isa = PBXGroup;
+			children = (
+				B862418A188C2A1100DB172C /* Externals */,
+				B89306DA1854E8CE00F3D74F /* Frameworks */,
+				B89306D91854E8CE00F3D74F /* Products */,
+				B89306E11854E8CE00F3D74F /* ClientApp */,
+			);
+			sourceTree = "<group>";
+		};
+		B89306D91854E8CE00F3D74F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B89306D81854E8CE00F3D74F /* ClientApp.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B89306DA1854E8CE00F3D74F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B89306DB1854E8CE00F3D74F /* Foundation.framework */,
+				B89306DD1854E8CE00F3D74F /* CoreGraphics.framework */,
+				B89306DF1854E8CE00F3D74F /* UIKit.framework */,
+				B89306FA1854E8CE00F3D74F /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B89306E11854E8CE00F3D74F /* ClientApp */ = {
+			isa = PBXGroup;
+			children = (
+				B84932FC188EEB2700C06437 /* UI */,
+				B8624210188EAC1A00DB172C /* Domain */,
+				B89306F31854E8CE00F3D74F /* Images.xcassets */,
+				B86241E1188EAA9E00DB172C /* Networking */,
+				B89306E21854E8CE00F3D74F /* Supporting Files */,
+			);
+			path = ClientApp;
+			sourceTree = "<group>";
+		};
+		B89306E21854E8CE00F3D74F /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				B89306E31854E8CE00F3D74F /* ClientApp-Info.plist */,
+				B89306E41854E8CE00F3D74F /* InfoPlist.strings */,
+				B89306E71854E8CE00F3D74F /* main.m */,
+				B89306E91854E8CE00F3D74F /* ClientApp-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		B89306D71854E8CE00F3D74F /* ClientApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B893070A1854E8CE00F3D74F /* Build configuration list for PBXNativeTarget "ClientApp" */;
+			buildPhases = (
+				B89306D41854E8CE00F3D74F /* Sources */,
+				B89306D51854E8CE00F3D74F /* Frameworks */,
+				B89306D61854E8CE00F3D74F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B8493324188EEF7B00C06437 /* PBXTargetDependency */,
+			);
+			name = ClientApp;
+			productName = Reservations;
+			productReference = B89306D81854E8CE00F3D74F /* ClientApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B89306D01854E8CE00F3D74F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0500;
+				ORGANIZATIONNAME = "Prairiedogg International Limited";
+				TargetAttributes = {
+					B89306D71854E8CE00F3D74F = {
+						DevelopmentTeam = HYT2HVYH6N;
+					};
+				};
+			};
+			buildConfigurationList = B89306D31854E8CE00F3D74F /* Build configuration list for PBXProject "ClientApp" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = B89306CF1854E8CE00F3D74F;
+			productRefGroup = B89306D91854E8CE00F3D74F /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = B862418C188C2A6E00DB172C /* Products */;
+					ProjectRef = B862418B188C2A6E00DB172C /* Deferred.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				B89306D71854E8CE00F3D74F /* ClientApp */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		B8624193188C2A6F00DB172C /* libDeferred.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libDeferred.a;
+			remoteRef = B8624192188C2A6F00DB172C /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		B8624195188C2A6F00DB172C /* libDeferred-OSX.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libDeferred-OSX.a";
+			remoteRef = B8624194188C2A6F00DB172C /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		B8624197188C2A6F00DB172C /* Specs */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.executable";
+			path = Specs;
+			remoteRef = B8624196188C2A6F00DB172C /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin PBXResourcesBuildPhase section */
+		B89306D61854E8CE00F3D74F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B89306F41854E8CE00F3D74F /* Images.xcassets in Resources */,
+				B849333D188EF0C900C06437 /* LoginController.xib in Resources */,
+				B89306E61854E8CE00F3D74F /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B89306D41854E8CE00F3D74F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B8493327188EF0B500C06437 /* AppDelegate.m in Sources */,
+				B84932F7188EEAAC00C06437 /* AuthTokenService.m in Sources */,
+				B8624216188EAC7D00DB172C /* AuthTokenRepository.m in Sources */,
+				B89306E81854E8CE00F3D74F /* main.m in Sources */,
+				B86241EF188EAB1600DB172C /* RequestProvider.m in Sources */,
+				B86241EE188EAB1600DB172C /* JSONClient.m in Sources */,
+				B86241EC188EAB1600DB172C /* DomainObjectClient.m in Sources */,
+				B8493345188EF15E00C06437 /* AuthTokenDeserializer.m in Sources */,
+				B84932FB188EEB1D00C06437 /* AuthenticatedRequestProvider.m in Sources */,
+				B849333C188EF0C900C06437 /* LoginController.m in Sources */,
+				B86241ED188EAB1600DB172C /* HTTPClient.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		B8493324188EEF7B00C06437 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Deferred;
+			targetProxy = B8493323188EEF7B00C06437 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		B89306E41854E8CE00F3D74F /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B89306E51854E8CE00F3D74F /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		B86241DB188E34D400DB172C /* Local */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				USER_HEADER_SEARCH_PATHS = "\"$PROJECT_DIR/Externals/deferred/Deferred/\"";
+			};
+			name = Local;
+		};
+		B86241DC188E34D400DB172C /* Local */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-Local";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				BUNDLE_IDENTIFIER_SUFFIX = "-local";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ClientApp/ClientApp-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					LOCALHOST,
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "ClientApp/ClientApp-Info.plist";
+				PRODUCT_NAME = ClientApp;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Local;
+		};
+		B89307081854E8CE00F3D74F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				USER_HEADER_SEARCH_PATHS = "\"$PROJECT_DIR/Externals/deferred/Deferred/\"";
+			};
+			name = Debug;
+		};
+		B89307091854E8CE00F3D74F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				SDKROOT = iphoneos;
+				USER_HEADER_SEARCH_PATHS = "\"$PROJECT_DIR/Externals/deferred/Deferred/\"";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		B893070B1854E8CE00F3D74F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				BUNDLE_IDENTIFIER_SUFFIX = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ClientApp/ClientApp-Prefix.pch";
+				INFOPLIST_FILE = "ClientApp/ClientApp-Info.plist";
+				PRODUCT_NAME = ClientApp;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		B893070C1854E8CE00F3D74F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				BUNDLE_IDENTIFIER_SUFFIX = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ClientApp/ClientApp-Prefix.pch";
+				INFOPLIST_FILE = "ClientApp/ClientApp-Info.plist";
+				PRODUCT_NAME = ClientApp;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B89306D31854E8CE00F3D74F /* Build configuration list for PBXProject "ClientApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B89307081854E8CE00F3D74F /* Debug */,
+				B86241DB188E34D400DB172C /* Local */,
+				B89307091854E8CE00F3D74F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B893070A1854E8CE00F3D74F /* Build configuration list for PBXNativeTarget "ClientApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B893070B1854E8CE00F3D74F /* Debug */,
+				B86241DC188E34D400DB172C /* Local */,
+				B893070C1854E8CE00F3D74F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = B89306D01854E8CE00F3D74F /* Project object */;
+}
