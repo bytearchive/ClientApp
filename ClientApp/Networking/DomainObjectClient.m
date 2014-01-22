@@ -27,22 +27,23 @@
 {
     KSDeferred *deferred = [KSDeferred defer];
     KSPromise *foundationCollectionPromise = [self.requestPromiseClient promiseWithRequest:request];
-    [foundationCollectionPromise then:^id(id foundationCollection) {
-        NSError *error = nil;
-        id domainObject = [deserializer deserialize:foundationCollection error:&error];
-        if (domainObject || !error) {
-            [deferred resolveWithValue:domainObject];
-        }
-        else
-        {
-            [deferred rejectWithError:error];
-        }
-        return foundationCollection;
-    }
-                             error:^id(NSError *error) {
-                                 [deferred rejectWithError:error];
-                                 return error;
-                             }];
+    [foundationCollectionPromise then:^id(id foundationCollection)
+     {
+         NSError *error = nil;
+         id domainObject = [deserializer deserialize:foundationCollection error:&error];
+         if (domainObject || !error) {
+             [deferred resolveWithValue:domainObject];
+         }
+         else
+         {
+             [deferred rejectWithError:error];
+         }
+         return foundationCollection;
+     } error:^id(NSError *error)
+     {
+         [deferred rejectWithError:error];
+         return error;
+     }];
     return deferred.promise;
 }
 
