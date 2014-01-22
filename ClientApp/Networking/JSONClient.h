@@ -1,14 +1,12 @@
 #import <Foundation/Foundation.h>
+#import "RequestPromiseClient.h"
 
 
 @class KSPromise;
-@class HTTPClient;
 
 
-@interface JSONClient : NSObject
+@interface JSONClient : NSObject <RequestPromiseClient>
 
-- (id)initWithHTTPClient:(HTTPClient *)httpClient;
-
-- (KSPromise *)promiseWithRequest:(NSURLRequest *)request;
+- (id)initWithRequestPromiseClient:(id<RequestPromiseClient>)requestPromiseClient;
 
 @end

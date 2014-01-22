@@ -5,26 +5,28 @@
 
 @interface JSONClient ()
 
-@property (strong, nonatomic) HTTPClient *httpClient;
+@property (strong, nonatomic) id <RequestPromiseClient> requestPromiseClient;
 
 @end
 
 
 @implementation JSONClient
 
-- (id)initWithHTTPClient:(HTTPClient *)httpClient
+- (id)initWithRequestPromiseClient:(id<RequestPromiseClient>)requestPromiseClient
 {
     self = [super init];
     if (self) {
-        self.httpClient = httpClient;
+        self.requestPromiseClient = requestPromiseClient;
     }
     return self;
 }
 
+#pragma mark - <RequestPromiseClient>
+
 - (KSPromise *)promiseWithRequest:(NSURLRequest *)request
 {
     KSDeferred *deferred = [KSDeferred defer];
-    KSPromise *dataPromise = [self.httpClient promiseWithRequest:request];
+    KSPromise *dataPromise = [self.requestPromiseClient promiseWithRequest:request];
     [dataPromise then:^id(NSData *responseData) {
         NSError *error;
         id jsonObject = [NSJSONSerialization JSONObjectWithData:responseData

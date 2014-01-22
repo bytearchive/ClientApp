@@ -1,14 +1,14 @@
-#import "RequestProvider.h"
+#import "JSONRequestProvider.h"
 
 
-@interface RequestProvider ()
+@interface JSONRequestProvider ()
 
 @property(strong, nonatomic) NSURLComponents *urlComponents;
 
 @end
 
 
-@implementation RequestProvider
+@implementation JSONRequestProvider
 
 - (id)initWithURLComponents:(NSURLComponents *)urlComponents
 {

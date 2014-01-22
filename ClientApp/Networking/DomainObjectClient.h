@@ -1,14 +1,14 @@
 #import <Foundation/Foundation.h>
 
 
-@class JSONClient;
 @class KSPromise;
+@protocol RequestPromiseClient;
 @protocol Deserializer;
 
 
 @interface DomainObjectClient : NSObject
 
-- (id)initWithJSONClient:(JSONClient *)jsonClient;
+- (id)initWithRequestPromiseClient:(id<RequestPromiseClient>)requestPromiseClient;
 
 - (KSPromise *)promiseWithRequest:(NSURLRequest *)request
                      deserializer:(id<Deserializer>)deserializer;

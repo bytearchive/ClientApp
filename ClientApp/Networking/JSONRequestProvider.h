@@ -1,7 +1,7 @@
 #import <Foundation/Foundation.h>
 
 
-@interface RequestProvider : NSObject
+@interface JSONRequestProvider : NSObject
 
 - (id)initWithURLComponents:(NSURLComponents *)urlComponents;
 

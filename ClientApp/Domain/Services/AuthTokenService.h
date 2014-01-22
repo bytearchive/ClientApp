@@ -2,14 +2,14 @@
 
 
 @class KSPromise;
-@class RequestProvider;
+@class JSONRequestProvider;
 @class DomainObjectClient;
 @protocol Deserializer;
 
 
 @interface AuthTokenService : NSObject
 
-- (id)initWithRequestProvider:(RequestProvider *)requestProvider
+- (id)initWithRequestProvider:(JSONRequestProvider *)requestProvider
            domainObjectClient:(DomainObjectClient *)domainObjectClient
                  deserializer:(id<Deserializer>)deserializer;
 

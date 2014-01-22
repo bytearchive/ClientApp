@@ -1,13 +1,13 @@
 #import "AuthTokenService.h"
 #import "KSPromise.h"
-#import "RequestProvider.h"
+#import "JSONRequestProvider.h"
 #import "DomainObjectClient.h"
 #import "Deserializer.h"
 
 
 @interface AuthTokenService ()
 
-@property (strong, nonatomic) RequestProvider *requestProvider;
+@property (strong, nonatomic) JSONRequestProvider *requestProvider;
 @property (strong, nonatomic) DomainObjectClient *domainObjectClient;
 @property (strong, nonatomic) id<Deserializer> deserializer;
 
@@ -16,7 +16,7 @@
 
 @implementation AuthTokenService
 
-- (id)initWithRequestProvider:(RequestProvider *)requestProvider
+- (id)initWithRequestProvider:(JSONRequestProvider *)requestProvider
            domainObjectClient:(DomainObjectClient *)domainObjectClient
                  deserializer:(id<Deserializer>)deserializer
 {

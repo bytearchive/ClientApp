@@ -6,18 +6,18 @@
 
 @interface DomainObjectClient ()
 
-@property (strong, nonatomic) JSONClient *jsonClient;
+@property (strong, nonatomic) id<RequestPromiseClient> requestPromiseClient;
 
 @end
 
 
 @implementation DomainObjectClient
 
-- (id)initWithJSONClient:(JSONClient *)jsonClient
+- (id)initWithRequestPromiseClient:(id<RequestPromiseClient>)requestPromiseClient
 {
     self = [super init];
     if (self) {
-        self.jsonClient = jsonClient;
+        self.requestPromiseClient = requestPromiseClient;
     }
     return self;
 }
@@ -26,7 +26,7 @@
                      deserializer:(id<Deserializer>)deserializer
 {
     KSDeferred *deferred = [KSDeferred defer];
-    KSPromise *foundationCollectionPromise = [self.jsonClient promiseWithRequest:request];
+    KSPromise *foundationCollectionPromise = [self.requestPromiseClient promiseWithRequest:request];
     [foundationCollectionPromise then:^id(id foundationCollection) {
         NSError *error = nil;
         id domainObject = [deserializer deserialize:foundationCollection error:&error];

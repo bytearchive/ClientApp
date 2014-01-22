@@ -2,12 +2,13 @@
 #import "LoginController.h"
 #import "AuthTokenRepository.h"
 #import "AuthTokenService.h"
-#import "RequestProvider.h"
+#import "JSONRequestProvider.h"
 #import "HTTPClient.h"
 #import "JSONClient.h"
 #import "DomainObjectClient.h"
 #import "Deserializer.h"
 #import "AuthTokenDeserializer.h"
+#import "RequestPromiseClient.h"
 
 
 @implementation AppDelegate
@@ -20,14 +21,15 @@
     NSURLSession *session = [NSURLSession sessionWithConfiguration:sessionConfiguration];
     NSOperationQueue *mainQueue = [NSOperationQueue mainQueue];
     NSIndexSet *acceptableStatusCodes = [NSIndexSet indexSetWithIndexesInRange:NSMakeRange(100, 200)];
-    RequestProvider *requestProvider = [[RequestProvider alloc] initWithURLComponents:urlComponents];
+    JSONRequestProvider *requestProvider = [[JSONRequestProvider alloc] initWithURLComponents:urlComponents];
     
     
-    HTTPClient *httpClient = [[HTTPClient alloc] initWithSession:session
-                                                           queue:mainQueue
-                                           acceptableStatusCodes:acceptableStatusCodes];
-    JSONClient *jsonClient = [[JSONClient alloc] initWithHTTPClient:httpClient];
-    DomainObjectClient *domainObjectClient = [[DomainObjectClient alloc] initWithJSONClient:jsonClient];
+    id <RequestPromiseClient> httpClient = [[HTTPClient alloc] initWithSession:session
+                                                                         queue:mainQueue
+                                                         acceptableStatusCodes:acceptableStatusCodes];
+    
+    id <RequestPromiseClient> jsonClient = [[JSONClient alloc] initWithRequestPromiseClient:httpClient];
+    DomainObjectClient *domainObjectClient = [[DomainObjectClient alloc] initWithRequestPromiseClient:jsonClient];
     
     id <Deserializer> authTokenDeserializer = [[AuthTokenDeserializer alloc] init];
     AuthTokenService *authTokenService = [[AuthTokenService alloc] initWithRequestProvider:requestProvider

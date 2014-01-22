@@ -26,6 +26,8 @@ acceptableStatusCodes:(NSIndexSet *)acceptableStatusCodes
     return self;
 }
 
+#pragma mark - <RequestPromiseClient>
+
 - (KSPromise *)promiseWithRequest:(NSURLRequest *)request
 {
     KSDeferred *deferred = [KSDeferred defer];
@@ -54,6 +56,14 @@ acceptableStatusCodes:(NSIndexSet *)acceptableStatusCodes
                                       }];
     [dataTask resume];
     return deferred.promise;
+}
+
+#pragma mark - NSObject
+
+- (id)init
+{
+    [self doesNotRecognizeSelector:_cmd];
+    return nil;
 }
 
 @end
