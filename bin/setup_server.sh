@@ -22,4 +22,5 @@ python manage.py migrate
 python manage.py collectstatic
 
 echo "Server and its dependencies installed correctly."
+echo "Run .bin/server.sh to run the development server."
 
