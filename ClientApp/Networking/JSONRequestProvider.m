@@ -19,6 +19,8 @@
     return self;
 }
 
+#pragma mark - <HTTPRequestProvider>
+
 - (NSURLRequest *)postRequestWithPath:(NSString *)path
                                params:(NSDictionary *)params
 {

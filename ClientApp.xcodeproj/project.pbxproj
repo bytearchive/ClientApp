@@ -60,6 +60,7 @@
 
 /* Begin PBXFileReference section */
 		B8149A01188F472F007A9E75 /* RequestPromiseClient.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RequestPromiseClient.h; sourceTree = "<group>"; };
+		B8149A02188F491A007A9E75 /* HTTPRequestProvider.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTTPRequestProvider.h; sourceTree = "<group>"; };
 		B84932F3188EEAAC00C06437 /* AuthTokenService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AuthTokenService.h; sourceTree = "<group>"; };
 		B84932F4188EEAAC00C06437 /* AuthTokenService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AuthTokenService.m; sourceTree = "<group>"; };
 		B84932F9188EEB1D00C06437 /* AuthenticatedRequestProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AuthenticatedRequestProvider.h; sourceTree = "<group>"; };
@@ -185,6 +186,7 @@
 				B86241E4188EAB1600DB172C /* DomainObjectClient.m */,
 				B86241E5188EAB1600DB172C /* HTTPClient.h */,
 				B86241E6188EAB1600DB172C /* HTTPClient.m */,
+				B8149A02188F491A007A9E75 /* HTTPRequestProvider.h */,
 				B86241E7188EAB1600DB172C /* JSONClient.h */,
 				B86241E8188EAB1600DB172C /* JSONClient.m */,
 				B86241E9188EAB1600DB172C /* JSONRequestProvider.h */,

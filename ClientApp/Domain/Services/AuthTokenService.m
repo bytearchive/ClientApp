@@ -7,7 +7,7 @@
 
 @interface AuthTokenService ()
 
-@property (strong, nonatomic) JSONRequestProvider *requestProvider;
+@property (strong, nonatomic) id<HTTPRequestProvider> requestProvider;
 @property (strong, nonatomic) DomainObjectClient *domainObjectClient;
 @property (strong, nonatomic) id<Deserializer> deserializer;
 
@@ -16,7 +16,7 @@
 
 @implementation AuthTokenService
 
-- (id)initWithRequestProvider:(JSONRequestProvider *)requestProvider
+- (id)initWithRequestProvider:(id<HTTPRequestProvider>)requestProvider
            domainObjectClient:(DomainObjectClient *)domainObjectClient
                  deserializer:(id<Deserializer>)deserializer
 {

@@ -1,21 +1,13 @@
 #import <Foundation/Foundation.h>
+#import "HTTPRequestProvider.h"
 
 
 @class JSONRequestProvider;
 
 
-@interface AuthenticatedRequestProvider : NSObject
+@interface AuthenticatedRequestProvider : NSObject <HTTPRequestProvider>
 
 - (id)initWithAuthToken:(NSString *)token
-        requestProvider:(JSONRequestProvider *)requestProvider;
-
-- (NSURLRequest *)getRequestWithPath:(NSString *)path
-                              params:(NSDictionary *)params;
-
-- (NSURLRequest *)postRequestWithPath:(NSString *)path
-                               params:(NSDictionary *)params;
-
-- (NSURLRequest *)deleteRequestWithPath:(NSString *)path
-                                 params:(NSDictionary *)params;
+        requestProvider:(id<HTTPRequestProvider>)requestProvider;
 
 @end

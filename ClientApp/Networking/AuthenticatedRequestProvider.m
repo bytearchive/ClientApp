@@ -1,10 +1,9 @@
 #import "AuthenticatedRequestProvider.h"
-#import "JSONRequestProvider.h"
 
 
 @interface AuthenticatedRequestProvider ()
 
-@property (strong, nonatomic) JSONRequestProvider *requestProvider;
+@property (strong, nonatomic) id<HTTPRequestProvider> requestProvider;
 @property (copy, nonatomic) NSString *token;
 
 @end
@@ -13,7 +12,7 @@
 @implementation AuthenticatedRequestProvider
 
 - (id)initWithAuthToken:(NSString *)token
-        requestProvider:(JSONRequestProvider *)requestProvider
+        requestProvider:(id<HTTPRequestProvider>)requestProvider
 {
     self = [super init];
     if (self) {
@@ -22,6 +21,8 @@
     }
     return self;
 }
+
+#pragma mark - <HTTPRequestProvider>
 
 - (NSURLRequest *)postRequestWithPath:(NSString *)path
                                params:(NSDictionary *)params

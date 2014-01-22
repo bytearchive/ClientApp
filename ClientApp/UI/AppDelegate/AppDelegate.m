@@ -21,7 +21,8 @@
     NSURLSession *session = [NSURLSession sessionWithConfiguration:sessionConfiguration];
     NSOperationQueue *mainQueue = [NSOperationQueue mainQueue];
     NSIndexSet *acceptableStatusCodes = [NSIndexSet indexSetWithIndexesInRange:NSMakeRange(100, 200)];
-    JSONRequestProvider *requestProvider = [[JSONRequestProvider alloc] initWithURLComponents:urlComponents];
+    
+    id<HTTPRequestProvider> jsonRequestProvider = [[JSONRequestProvider alloc] initWithURLComponents:urlComponents];
     
     
     id <RequestPromiseClient> httpClient = [[HTTPClient alloc] initWithSession:session
@@ -32,7 +33,7 @@
     DomainObjectClient *domainObjectClient = [[DomainObjectClient alloc] initWithRequestPromiseClient:jsonClient];
     
     id <Deserializer> authTokenDeserializer = [[AuthTokenDeserializer alloc] init];
-    AuthTokenService *authTokenService = [[AuthTokenService alloc] initWithRequestProvider:requestProvider
+    AuthTokenService *authTokenService = [[AuthTokenService alloc] initWithRequestProvider:jsonRequestProvider
                                                                         domainObjectClient:domainObjectClient
                                                                               deserializer:authTokenDeserializer];
     AuthTokenRepository *authTokenRepository = [[AuthTokenRepository alloc] initWithAuthTokenService:authTokenService];
