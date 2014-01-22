@@ -33,7 +33,7 @@
                                                         options:NSJSONReadingAllowFragments
                                                           error:&error];
         if (responseData && responseData.length > 0 && !jsonObject && error) {
-            NSString *errorDomainString = @"com.prairiedogg.reservations.errors.jsonDeserializationError";
+            NSString *errorDomainString = @"com.prairiedogg.clientapp.errors.jsonDeserializationError";
             NSError *error = [NSError errorWithDomain:errorDomainString code:1001 userInfo:nil];
             [deferred rejectWithError:error];
         }

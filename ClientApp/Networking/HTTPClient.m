@@ -46,7 +46,7 @@ acceptableStatusCodes:(NSIndexSet *)acceptableStatusCodes
                                                   [deferred resolveWithValue:data];
                                               }
                                               else {
-                                                  NSString *errorDomain = @"com.prairiedogg.reservations.errors.httpStatusCodeError";
+                                                  NSString *errorDomain = @"com.prairiedogg.clientapp.errors.httpStatusCodeError";
                                                   NSError *httpStatusCodeError = [NSError errorWithDomain:errorDomain
                                                                                                      code:1000
                                                                                                  userInfo:nil];
