@@ -10,8 +10,6 @@
 		B84932F7188EEAAC00C06437 /* AuthTokenService.m in Sources */ = {isa = PBXBuildFile; fileRef = B84932F4188EEAAC00C06437 /* AuthTokenService.m */; };
 		B84932FB188EEB1D00C06437 /* AuthenticatedRequestProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = B84932FA188EEB1D00C06437 /* AuthenticatedRequestProvider.m */; };
 		B8493327188EF0B500C06437 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B8493326188EF0B500C06437 /* AppDelegate.m */; };
-		B849333C188EF0C900C06437 /* LoginController.m in Sources */ = {isa = PBXBuildFile; fileRef = B849332F188EF0C900C06437 /* LoginController.m */; };
-		B849333D188EF0C900C06437 /* LoginController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B8493330188EF0C900C06437 /* LoginController.xib */; };
 		B8493345188EF15E00C06437 /* AuthTokenDeserializer.m in Sources */ = {isa = PBXBuildFile; fileRef = B8493344188EF15E00C06437 /* AuthTokenDeserializer.m */; };
 		B862419D188C2AA400DB172C /* libDeferred.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B8624193188C2A6F00DB172C /* libDeferred.a */; };
 		B86241EC188EAB1600DB172C /* DomainObjectClient.m in Sources */ = {isa = PBXBuildFile; fileRef = B86241E4188EAB1600DB172C /* DomainObjectClient.m */; };
@@ -19,6 +17,8 @@
 		B86241EE188EAB1600DB172C /* JSONClient.m in Sources */ = {isa = PBXBuildFile; fileRef = B86241E8188EAB1600DB172C /* JSONClient.m */; };
 		B86241EF188EAB1600DB172C /* JSONRequestProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = B86241EA188EAB1600DB172C /* JSONRequestProvider.m */; };
 		B8624216188EAC7D00DB172C /* AuthTokenRepository.m in Sources */ = {isa = PBXBuildFile; fileRef = B8624213188EAC7D00DB172C /* AuthTokenRepository.m */; };
+		B86E1AAB18975DC00076C100 /* LoginController.m in Sources */ = {isa = PBXBuildFile; fileRef = B86E1AA918975DC00076C100 /* LoginController.m */; };
+		B86E1AAC18975DC00076C100 /* LoginController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B86E1AAA18975DC00076C100 /* LoginController.xib */; };
 		B89306DC1854E8CE00F3D74F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B89306DB1854E8CE00F3D74F /* Foundation.framework */; };
 		B89306DE1854E8CE00F3D74F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B89306DD1854E8CE00F3D74F /* CoreGraphics.framework */; };
 		B89306E01854E8CE00F3D74F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B89306DF1854E8CE00F3D74F /* UIKit.framework */; };
@@ -67,9 +67,6 @@
 		B84932FA188EEB1D00C06437 /* AuthenticatedRequestProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AuthenticatedRequestProvider.m; sourceTree = "<group>"; };
 		B8493325188EF0B500C06437 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		B8493326188EF0B500C06437 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		B849332E188EF0C900C06437 /* LoginController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginController.h; sourceTree = "<group>"; };
-		B849332F188EF0C900C06437 /* LoginController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginController.m; sourceTree = "<group>"; };
-		B8493330188EF0C900C06437 /* LoginController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginController.xib; sourceTree = "<group>"; };
 		B8493343188EF15E00C06437 /* AuthTokenDeserializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AuthTokenDeserializer.h; sourceTree = "<group>"; };
 		B8493344188EF15E00C06437 /* AuthTokenDeserializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AuthTokenDeserializer.m; sourceTree = "<group>"; };
 		B862418B188C2A6E00DB172C /* Deferred.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Deferred.xcodeproj; path = deferred/Deferred.xcodeproj; sourceTree = "<group>"; };
@@ -85,6 +82,10 @@
 		B86241EB188EAB1600DB172C /* Serializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Serializer.h; sourceTree = "<group>"; };
 		B8624212188EAC7D00DB172C /* AuthTokenRepository.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AuthTokenRepository.h; sourceTree = "<group>"; };
 		B8624213188EAC7D00DB172C /* AuthTokenRepository.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AuthTokenRepository.m; sourceTree = "<group>"; };
+		B86E1AA818975DB60076C100 /* LoginController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginController.h; sourceTree = "<group>"; };
+		B86E1AA918975DC00076C100 /* LoginController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginController.m; sourceTree = "<group>"; };
+		B86E1AAA18975DC00076C100 /* LoginController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginController.xib; sourceTree = "<group>"; };
+		B86E1AAD18975EA80076C100 /* HTTPClientDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTTPClientDelegate.h; sourceTree = "<group>"; };
 		B89306D81854E8CE00F3D74F /* ClientApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ClientApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B89306DB1854E8CE00F3D74F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		B89306DD1854E8CE00F3D74F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -142,9 +143,9 @@
 		B84932FD188EEB5700C06437 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				B849332E188EF0C900C06437 /* LoginController.h */,
-				B849332F188EF0C900C06437 /* LoginController.m */,
-				B8493330188EF0C900C06437 /* LoginController.xib */,
+				B86E1AA818975DB60076C100 /* LoginController.h */,
+				B86E1AA918975DC00076C100 /* LoginController.m */,
+				B86E1AAA18975DC00076C100 /* LoginController.xib */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -186,6 +187,7 @@
 				B86241E4188EAB1600DB172C /* DomainObjectClient.m */,
 				B86241E5188EAB1600DB172C /* HTTPClient.h */,
 				B86241E6188EAB1600DB172C /* HTTPClient.m */,
+				B86E1AAD18975EA80076C100 /* HTTPClientDelegate.h */,
 				B8149A02188F491A007A9E75 /* HTTPRequestProvider.h */,
 				B86241E7188EAB1600DB172C /* JSONClient.h */,
 				B86241E8188EAB1600DB172C /* JSONClient.m */,
@@ -256,11 +258,11 @@
 		B89306E11854E8CE00F3D74F /* ClientApp */ = {
 			isa = PBXGroup;
 			children = (
-				B84932FC188EEB2700C06437 /* UI */,
 				B8624210188EAC1A00DB172C /* Domain */,
 				B89306F31854E8CE00F3D74F /* Images.xcassets */,
 				B86241E1188EAA9E00DB172C /* Networking */,
 				B89306E21854E8CE00F3D74F /* Supporting Files */,
+				B84932FC188EEB2700C06437 /* UI */,
 			);
 			path = ClientApp;
 			sourceTree = "<group>";
@@ -365,7 +367,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B89306F41854E8CE00F3D74F /* Images.xcassets in Resources */,
-				B849333D188EF0C900C06437 /* LoginController.xib in Resources */,
+				B86E1AAC18975DC00076C100 /* LoginController.xib in Resources */,
 				B89306E61854E8CE00F3D74F /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -378,6 +380,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B8493327188EF0B500C06437 /* AppDelegate.m in Sources */,
+				B86E1AAB18975DC00076C100 /* LoginController.m in Sources */,
 				B84932F7188EEAAC00C06437 /* AuthTokenService.m in Sources */,
 				B8624216188EAC7D00DB172C /* AuthTokenRepository.m in Sources */,
 				B89306E81854E8CE00F3D74F /* main.m in Sources */,
@@ -386,7 +389,6 @@
 				B86241EC188EAB1600DB172C /* DomainObjectClient.m in Sources */,
 				B8493345188EF15E00C06437 /* AuthTokenDeserializer.m in Sources */,
 				B84932FB188EEB1D00C06437 /* AuthenticatedRequestProvider.m in Sources */,
-				B849333C188EF0C900C06437 /* LoginController.m in Sources */,
 				B86241ED188EAB1600DB172C /* HTTPClient.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -9,6 +9,11 @@
 #import "Deserializer.h"
 #import "AuthTokenDeserializer.h"
 #import "RequestPromiseClient.h"
+#import "HTTPClientDelegate.h"
+
+
+@interface AppDelegate () <HTTPClientDelegate>
+@end
 
 
 @implementation AppDelegate
@@ -25,9 +30,10 @@
     id<HTTPRequestProvider> jsonRequestProvider = [[JSONRequestProvider alloc] initWithURLComponents:urlComponents];
     
     
-    id <RequestPromiseClient> httpClient = [[HTTPClient alloc] initWithSession:session
+    HTTPClient *httpClient = [[HTTPClient alloc] initWithSession:session
                                                                          queue:mainQueue
                                                          acceptableStatusCodes:acceptableStatusCodes];
+    httpClient.delegate = self;
     
     id <RequestPromiseClient> jsonClient = [[JSONClient alloc] initWithRequestPromiseClient:httpClient];
     DomainObjectClient *domainObjectClient = [[DomainObjectClient alloc] initWithRequestPromiseClient:jsonClient];
@@ -49,6 +55,20 @@
     self.window.rootViewController = navigationController;
     [self.window makeKeyAndVisible];
     return YES;
+}
+
+#pragma mark - <HTTPClientDelegate>
+
+- (void)httpClient:(HTTPClient *)httpClient didSendRequest:(NSURLRequest *)request
+{
+    UIApplication *application = [UIApplication sharedApplication];
+    application.networkActivityIndicatorVisible = YES;
+}
+
+- (void)httpClient:(HTTPClient *)httpClient didUpdateTaskCount:(NSUInteger)updatedTaskCount
+{
+    UIApplication *application = [UIApplication sharedApplication];
+    application.networkActivityIndicatorVisible = updatedTaskCount > 0;
 }
 
 #pragma mark - Private

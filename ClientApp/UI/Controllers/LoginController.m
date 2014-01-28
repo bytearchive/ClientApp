@@ -36,6 +36,14 @@
 
 #pragma mark - <UITextFieldDelegate>
 
+- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
+{
+    UITextField *otherTextField = (textField == self.usernameField) ? self.passwordField : self.usernameField;
+    NSString *updatedText = [textField.text stringByReplacingCharactersInRange:range withString:string];
+    self.loginButton.enabled = (updatedText.length > 0 && otherTextField.text.length > 0);
+    return YES;
+}
+
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
 {
     if (textField == self.usernameField) {
@@ -62,11 +70,11 @@
     [self dropKeyboard];
 }
 
-
 - (void)login
 {
     [self dropKeyboard];
     self.view.userInteractionEnabled = NO;
+    [self.spinner startAnimating];
     NSString *username = self.usernameField.text;
     NSString *password = self.passwordField.text;
     
@@ -76,7 +84,7 @@
     [promise then:^id(NSString *authToken) {
         __strong typeof(weakSelf) strongSelf = weakSelf;
         strongSelf.view.userInteractionEnabled = YES;
-        
+        [strongSelf.spinner stopAnimating];
         NSString *successString = [NSString stringWithFormat:@"here's your auth token: %@", authToken];
         UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"You logged in successfully"
                                                             message:successString
@@ -89,6 +97,7 @@
     } error:^id(NSError *error) {
         __strong typeof(weakSelf) strongSelf = weakSelf;
         strongSelf.view.userInteractionEnabled = YES;
+        [strongSelf.spinner stopAnimating];
         UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Login Problem"
                                                             message:@"There was a problem logging in, please try again."
                                                            delegate:nil

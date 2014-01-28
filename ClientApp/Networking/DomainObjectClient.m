@@ -34,12 +34,12 @@
          if (domainObject || !error) {
              [deferred resolveWithValue:domainObject];
          }
-         else
-         {
+         else {
              [deferred rejectWithError:error];
          }
          return foundationCollection;
-     } error:^id(NSError *error)
+     }
+                                error:^id(NSError *error)
      {
          [deferred rejectWithError:error];
          return error;
