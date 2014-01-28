@@ -10,43 +10,40 @@
 #import "AuthTokenDeserializer.h"
 #import "RequestPromiseClient.h"
 #import "HTTPClientDelegate.h"
+#import "Blindside.h"
+#import "DomainModule.h"
+#import "NetworkingModule.h"
+#import "ControllerModule.h"
 
 
 @interface AppDelegate () <HTTPClientDelegate>
+
+@property (strong, nonatomic) id <BSInjector> injector;
+
 @end
 
 
 @implementation AppDelegate
 
+- (id)init
+{
+    self = [super init];
+    if (self) {
+        id <BSModule> networkingModule = [[NetworkingModule alloc] init];
+        id <BSModule> controllerModule = [[ControllerModule alloc] init];
+        self.injector = [Blindside injectorWithModules:@[networkingModule, controllerModule]];
+    }
+    return self;
+}
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    NSURLComponents *urlComponents = [self urlComponents];
-    
-    NSURLSessionConfiguration *sessionConfiguration = [NSURLSessionConfiguration defaultSessionConfiguration];
-    NSURLSession *session = [NSURLSession sessionWithConfiguration:sessionConfiguration];
-    NSOperationQueue *mainQueue = [NSOperationQueue mainQueue];
-    NSIndexSet *acceptableStatusCodes = [NSIndexSet indexSetWithIndexesInRange:NSMakeRange(100, 200)];
-    
-    id<HTTPRequestProvider> jsonRequestProvider = [[JSONRequestProvider alloc] initWithURLComponents:urlComponents];
-    
-    
-    HTTPClient *httpClient = [[HTTPClient alloc] initWithSession:session
-                                                                         queue:mainQueue
-                                                         acceptableStatusCodes:acceptableStatusCodes];
+    HTTPClient *httpClient = [self.injector getInstance:[HTTPClient class]];
     httpClient.delegate = self;
     
-    id <RequestPromiseClient> jsonClient = [[JSONClient alloc] initWithRequestPromiseClient:httpClient];
-    DomainObjectClient *domainObjectClient = [[DomainObjectClient alloc] initWithRequestPromiseClient:jsonClient];
-    
-    id <Deserializer> authTokenDeserializer = [[AuthTokenDeserializer alloc] init];
-    AuthTokenService *authTokenService = [[AuthTokenService alloc] initWithRequestProvider:jsonRequestProvider
-                                                                        domainObjectClient:domainObjectClient
-                                                                              deserializer:authTokenDeserializer];
-    AuthTokenRepository *authTokenRepository = [[AuthTokenRepository alloc] initWithAuthTokenService:authTokenService];
-    
     UITapGestureRecognizer *tapRecognizer = [[UITapGestureRecognizer alloc] init];
-    LoginController *loginController = [[LoginController alloc] initWithAuthTokenRepository:authTokenRepository
-                                                                              tapRecognizer:tapRecognizer];
+    LoginController *loginController = [self.injector getInstance:[LoginController class]];
+    [loginController setupWithTapRecognizer:tapRecognizer];
     
     UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:loginController];
     
@@ -69,23 +66,6 @@
 {
     UIApplication *application = [UIApplication sharedApplication];
     application.networkActivityIndicatorVisible = updatedTaskCount > 0;
-}
-
-#pragma mark - Private
-
-- (NSURLComponents *)urlComponents
-{
-    NSString *host = @"some-server.com";
-    NSNumber *port = @80;
-#if defined(LOCALHOST)
-    host = @"localhost";
-    port = @5000;
-#endif
-    NSURLComponents *urlComponents = [[NSURLComponents alloc] init];
-    urlComponents.scheme = @"http";
-    urlComponents.host = host;
-    urlComponents.port = port;
-    return urlComponents;
 }
 
 @end

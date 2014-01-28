@@ -11,7 +11,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *loginButton;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *spinner;
 
-- (id)initWithAuthTokenRepository:(AuthTokenRepository *)authTokenRepository
-                    tapRecognizer:(UITapGestureRecognizer *)tapRecognizer;
+- (id)initWithAuthTokenRepository:(AuthTokenRepository *)authTokenRepository;
+- (void)setupWithTapRecognizer:(UITapGestureRecognizer *)tapRecognizer;
 
 @end

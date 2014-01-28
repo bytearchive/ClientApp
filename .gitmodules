@@ -4,3 +4,6 @@
 [submodule "Externals/django-rest-framework-api-server"]
 	path = Externals/django-rest-framework-api-server
 	url = git@github.com:wileykestner/django-rest-framework-api-server.git
+[submodule "Externals/blindside"]
+	path = Externals/blindside
+	url = git@github.com:jbsf/blindside.git

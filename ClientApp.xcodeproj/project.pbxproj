@@ -19,6 +19,11 @@
 		B8624216188EAC7D00DB172C /* AuthTokenRepository.m in Sources */ = {isa = PBXBuildFile; fileRef = B8624213188EAC7D00DB172C /* AuthTokenRepository.m */; };
 		B86E1AAB18975DC00076C100 /* LoginController.m in Sources */ = {isa = PBXBuildFile; fileRef = B86E1AA918975DC00076C100 /* LoginController.m */; };
 		B86E1AAC18975DC00076C100 /* LoginController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B86E1AAA18975DC00076C100 /* LoginController.xib */; };
+		B86E1ABF1897611D0076C100 /* libBlindside-StaticLib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B86E1ABC1897610B0076C100 /* libBlindside-StaticLib.a */; };
+		B86E1AC3189762070076C100 /* DomainModule.m in Sources */ = {isa = PBXBuildFile; fileRef = B86E1AC2189762070076C100 /* DomainModule.m */; };
+		B86E1AC6189762690076C100 /* InjectorKeys.m in Sources */ = {isa = PBXBuildFile; fileRef = B86E1AC5189762690076C100 /* InjectorKeys.m */; };
+		B86E1AC9189762D70076C100 /* NetworkingModule.m in Sources */ = {isa = PBXBuildFile; fileRef = B86E1AC8189762D70076C100 /* NetworkingModule.m */; };
+		B86E1ACC189762E40076C100 /* ControllerModule.m in Sources */ = {isa = PBXBuildFile; fileRef = B86E1ACB189762E40076C100 /* ControllerModule.m */; };
 		B89306DC1854E8CE00F3D74F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B89306DB1854E8CE00F3D74F /* Foundation.framework */; };
 		B89306DE1854E8CE00F3D74F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B89306DD1854E8CE00F3D74F /* CoreGraphics.framework */; };
 		B89306E01854E8CE00F3D74F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B89306DF1854E8CE00F3D74F /* UIKit.framework */; };
@@ -56,6 +61,34 @@
 			remoteGlobalIDString = E18A7B4415674ED10083D745;
 			remoteInfo = Specs;
 		};
+		B86E1AB71897610B0076C100 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B86E1AAF1897610A0076C100 /* Blindside.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 29CAC6E4150292AD00731862;
+			remoteInfo = Blindside;
+		};
+		B86E1AB91897610B0076C100 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B86E1AAF1897610A0076C100 /* Blindside.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 29CAC7001502932000731862;
+			remoteInfo = Specs;
+		};
+		B86E1ABB1897610B0076C100 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B86E1AAF1897610A0076C100 /* Blindside.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 29997B471505EC0B00C12110;
+			remoteInfo = "Blindside-StaticLib";
+		};
+		B86E1ABD189761160076C100 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B86E1AAF1897610A0076C100 /* Blindside.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 29997B461505EC0B00C12110;
+			remoteInfo = "Blindside-StaticLib";
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -86,6 +119,15 @@
 		B86E1AA918975DC00076C100 /* LoginController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginController.m; sourceTree = "<group>"; };
 		B86E1AAA18975DC00076C100 /* LoginController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginController.xib; sourceTree = "<group>"; };
 		B86E1AAD18975EA80076C100 /* HTTPClientDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTTPClientDelegate.h; sourceTree = "<group>"; };
+		B86E1AAF1897610A0076C100 /* Blindside.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Blindside.xcodeproj; path = blindside/Blindside.xcodeproj; sourceTree = "<group>"; };
+		B86E1AC1189762070076C100 /* DomainModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DomainModule.h; sourceTree = "<group>"; };
+		B86E1AC2189762070076C100 /* DomainModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DomainModule.m; sourceTree = "<group>"; };
+		B86E1AC4189762690076C100 /* InjectorKeys.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InjectorKeys.h; sourceTree = "<group>"; };
+		B86E1AC5189762690076C100 /* InjectorKeys.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InjectorKeys.m; sourceTree = "<group>"; };
+		B86E1AC7189762D70076C100 /* NetworkingModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkingModule.h; sourceTree = "<group>"; };
+		B86E1AC8189762D70076C100 /* NetworkingModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkingModule.m; sourceTree = "<group>"; };
+		B86E1ACA189762E40076C100 /* ControllerModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ControllerModule.h; sourceTree = "<group>"; };
+		B86E1ACB189762E40076C100 /* ControllerModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ControllerModule.m; sourceTree = "<group>"; };
 		B89306D81854E8CE00F3D74F /* ClientApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ClientApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B89306DB1854E8CE00F3D74F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		B89306DD1854E8CE00F3D74F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -106,6 +148,7 @@
 				B89306DC1854E8CE00F3D74F /* Foundation.framework in Frameworks */,
 				B89306DE1854E8CE00F3D74F /* CoreGraphics.framework in Frameworks */,
 				B89306E01854E8CE00F3D74F /* UIKit.framework in Frameworks */,
+				B86E1ABF1897611D0076C100 /* libBlindside-StaticLib.a in Frameworks */,
 				B862419D188C2AA400DB172C /* libDeferred.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -162,6 +205,7 @@
 		B862418A188C2A1100DB172C /* Externals */ = {
 			isa = PBXGroup;
 			children = (
+				B86E1AAF1897610A0076C100 /* Blindside.xcodeproj */,
 				B862418B188C2A6E00DB172C /* Deferred.xcodeproj */,
 			);
 			path = Externals;
@@ -226,6 +270,31 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		B86E1AB01897610A0076C100 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B86E1AB81897610B0076C100 /* Blindside.framework */,
+				B86E1ABA1897610B0076C100 /* Specs */,
+				B86E1ABC1897610B0076C100 /* libBlindside-StaticLib.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B86E1AC0189761D50076C100 /* InjectorModules */ = {
+			isa = PBXGroup;
+			children = (
+				B86E1ACA189762E40076C100 /* ControllerModule.h */,
+				B86E1ACB189762E40076C100 /* ControllerModule.m */,
+				B86E1AC1189762070076C100 /* DomainModule.h */,
+				B86E1AC2189762070076C100 /* DomainModule.m */,
+				B86E1AC4189762690076C100 /* InjectorKeys.h */,
+				B86E1AC5189762690076C100 /* InjectorKeys.m */,
+				B86E1AC7189762D70076C100 /* NetworkingModule.h */,
+				B86E1AC8189762D70076C100 /* NetworkingModule.m */,
+			);
+			path = InjectorModules;
+			sourceTree = "<group>";
+		};
 		B89306CF1854E8CE00F3D74F = {
 			isa = PBXGroup;
 			children = (
@@ -260,6 +329,7 @@
 			children = (
 				B8624210188EAC1A00DB172C /* Domain */,
 				B89306F31854E8CE00F3D74F /* Images.xcassets */,
+				B86E1AC0189761D50076C100 /* InjectorModules */,
 				B86241E1188EAA9E00DB172C /* Networking */,
 				B89306E21854E8CE00F3D74F /* Supporting Files */,
 				B84932FC188EEB2700C06437 /* UI */,
@@ -292,6 +362,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				B86E1ABE189761160076C100 /* PBXTargetDependency */,
 				B8493324188EEF7B00C06437 /* PBXTargetDependency */,
 			);
 			name = ClientApp;
@@ -326,6 +397,10 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
+					ProductGroup = B86E1AB01897610A0076C100 /* Products */;
+					ProjectRef = B86E1AAF1897610A0076C100 /* Blindside.xcodeproj */;
+				},
+				{
 					ProductGroup = B862418C188C2A6E00DB172C /* Products */;
 					ProjectRef = B862418B188C2A6E00DB172C /* Deferred.xcodeproj */;
 				},
@@ -359,6 +434,27 @@
 			remoteRef = B8624196188C2A6F00DB172C /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
+		B86E1AB81897610B0076C100 /* Blindside.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Blindside.framework;
+			remoteRef = B86E1AB71897610B0076C100 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		B86E1ABA1897610B0076C100 /* Specs */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.executable";
+			path = Specs;
+			remoteRef = B86E1AB91897610B0076C100 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		B86E1ABC1897610B0076C100 /* libBlindside-StaticLib.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libBlindside-StaticLib.a";
+			remoteRef = B86E1ABB1897610B0076C100 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 /* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
@@ -382,14 +478,18 @@
 				B8493327188EF0B500C06437 /* AppDelegate.m in Sources */,
 				B86E1AAB18975DC00076C100 /* LoginController.m in Sources */,
 				B84932F7188EEAAC00C06437 /* AuthTokenService.m in Sources */,
+				B86E1AC9189762D70076C100 /* NetworkingModule.m in Sources */,
 				B8624216188EAC7D00DB172C /* AuthTokenRepository.m in Sources */,
 				B89306E81854E8CE00F3D74F /* main.m in Sources */,
 				B86241EF188EAB1600DB172C /* JSONRequestProvider.m in Sources */,
 				B86241EE188EAB1600DB172C /* JSONClient.m in Sources */,
+				B86E1AC6189762690076C100 /* InjectorKeys.m in Sources */,
+				B86E1AC3189762070076C100 /* DomainModule.m in Sources */,
 				B86241EC188EAB1600DB172C /* DomainObjectClient.m in Sources */,
 				B8493345188EF15E00C06437 /* AuthTokenDeserializer.m in Sources */,
 				B84932FB188EEB1D00C06437 /* AuthenticatedRequestProvider.m in Sources */,
 				B86241ED188EAB1600DB172C /* HTTPClient.m in Sources */,
+				B86E1ACC189762E40076C100 /* ControllerModule.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -400,6 +500,11 @@
 			isa = PBXTargetDependency;
 			name = Deferred;
 			targetProxy = B8493323188EEF7B00C06437 /* PBXContainerItemProxy */;
+		};
+		B86E1ABE189761160076C100 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Blindside-StaticLib";
+			targetProxy = B86E1ABD189761160076C100 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -451,7 +556,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
-				USER_HEADER_SEARCH_PATHS = "\"$PROJECT_DIR/Externals/deferred/Deferred/\"";
+				USER_HEADER_SEARCH_PATHS = "\"$PROJECT_DIR/Externals/deferred/Deferred/\" \"$PROJECT_DIR/Externals/blindside/Headers/\"";
 			};
 			name = Local;
 		};
@@ -511,7 +616,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
-				USER_HEADER_SEARCH_PATHS = "\"$PROJECT_DIR/Externals/deferred/Deferred/\"";
+				USER_HEADER_SEARCH_PATHS = "\"$PROJECT_DIR/Externals/deferred/Deferred/\" \"$PROJECT_DIR/Externals/blindside/Headers/\"";
 			};
 			name = Debug;
 		};
@@ -544,7 +649,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				SDKROOT = iphoneos;
-				USER_HEADER_SEARCH_PATHS = "\"$PROJECT_DIR/Externals/deferred/Deferred/\"";
+				USER_HEADER_SEARCH_PATHS = "\"$PROJECT_DIR/Externals/deferred/Deferred/\" \"$PROJECT_DIR/Externals/blindside/Headers/\"";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;

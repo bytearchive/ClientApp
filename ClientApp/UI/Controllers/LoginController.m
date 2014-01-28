@@ -13,15 +13,19 @@
 
 @implementation LoginController
 
+
 - (id)initWithAuthTokenRepository:(AuthTokenRepository *)authTokenRepository
-                    tapRecognizer:(UITapGestureRecognizer *)tapRecognizer
 {
     self = [super init];
     if (self) {
         self.authTokenRepository = authTokenRepository;
-        self.tapRecognizer = tapRecognizer;
     }
     return self;
+}
+
+- (void)setupWithTapRecognizer:(UITapGestureRecognizer *)tapRecognizer
+{
+    self.tapRecognizer = tapRecognizer;
 }
 
 #pragma mark - UIViewController
