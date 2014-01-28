@@ -1,5 +1,4 @@
 #import "JSONClient.h"
-#import "HTTPClient.h"
 #import "KSDeferred.h"
 
 

@@ -1,8 +1,3 @@
-#import "HTTPClient.h"
-#import "KSDeferred.h"
-#import "HTTPClientDelegate.h"
-
-
 @interface HTTPClient ()
 
 @property (strong, nonatomic) NSURLSession *session;

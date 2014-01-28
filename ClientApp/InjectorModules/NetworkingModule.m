@@ -4,13 +4,11 @@
 #import "JSONRequestProvider.h"
 #import "HTTPClient.h"
 #import "JSONClient.h"
-#import "RequestPromiseClient.h"
 #import "DomainObjectClient.h"
 #import "AuthTokenDeserializer.h"
 #import "AuthTokenService.h"
 #import "BSSingleton.h"
 #import "BSInjector.h"
-#import "HTTPRequestProvider.h"
 
 
 @implementation NetworkingModule
