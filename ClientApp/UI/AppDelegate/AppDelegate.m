@@ -34,7 +34,6 @@ static NSString *const httpErrorDomain = @"com.myapp.http";
     //
     NSOperationQueue *mainQueue = [NSOperationQueue mainQueue];
     
-    
     // Paths
     //
     NSString * (^authTokenPathBlock) (NSString *) = ^ NSString *(__unused id requestParams) { return @"/api/auth/token/"; };
@@ -73,8 +72,7 @@ static NSString *const httpErrorDomain = @"com.myapp.http";
     // Network clients
     //
     id<PDCreationClient> authTokenCreator = [networkClientProvider networkClientWithNetworkResource:createAuthTokenResource
-                                                                                 domainObjectClient:domainObjectClient
-                                                                                    requestProvider:JSONRequestProvider];
+                                                                                 domainObjectClient:domainObjectClient];
 
     UITapGestureRecognizer *tapRecognizer = [[UITapGestureRecognizer alloc] init];
     LoginController *loginController = [[LoginController alloc] initWithAuthTokenCreator:authTokenCreator tapRecognizer:tapRecognizer];
