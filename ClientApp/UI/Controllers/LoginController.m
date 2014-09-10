@@ -1,27 +1,36 @@
 #import "LoginController.h"
 #import "KSPromise.h"
-#import "AuthTokenRepository.h"
+#import "PDCreationClient.h"
+#import "AuthTokenParams.h"
 
 
 @interface LoginController () <UITextFieldDelegate>
 
-@property (strong, nonatomic) AuthTokenRepository *authTokenRepository;
-@property (strong, nonatomic) UITapGestureRecognizer *tapRecognizer;
+@property (nonatomic) id<PDCreationClient> authTokenCreator;
+@property (nonatomic) UITapGestureRecognizer *tapRecognizer;
 
 @end
 
 
 @implementation LoginController
 
-- (id)initWithAuthTokenRepository:(AuthTokenRepository *)authTokenRepository
-                    tapRecognizer:(UITapGestureRecognizer *)tapRecognizer
+- (id)initWithAuthTokenCreator:(id<PDCreationClient>)authTokenCreator
+                 tapRecognizer:(UITapGestureRecognizer *)tapRecognizer
 {
     self = [super init];
     if (self) {
-        self.authTokenRepository = authTokenRepository;
+        self.authTokenCreator = authTokenCreator;
         self.tapRecognizer = tapRecognizer;
     }
     return self;
+}
+
+#pragma mark - NSObject
+
+- (instancetype)init
+{
+    [self doesNotRecognizeSelector:_cmd];
+    return nil;
 }
 
 #pragma mark - UIViewController
@@ -78,8 +87,8 @@
     NSString *username = self.usernameField.text;
     NSString *password = self.passwordField.text;
     
-    KSPromise *promise = [self.authTokenRepository tokenPromiseWithUsername:username
-                                                                   password:password];
+    AuthTokenParams *authTokenParams = [[AuthTokenParams alloc] initWithUsername:username password:password];
+    KSPromise *promise = [self.authTokenCreator creationPromiseWithRequestParameters:authTokenParams];
     __weak typeof(self) weakSelf = self;
     [promise then:^id(NSString *authToken) {
         __strong typeof(weakSelf) strongSelf = weakSelf;

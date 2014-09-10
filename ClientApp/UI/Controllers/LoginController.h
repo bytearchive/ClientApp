@@ -1,7 +1,7 @@
 #import <UIKit/UIKit.h>
 
 
-@class AuthTokenRepository;
+@protocol PDCreationClient;
 
 
 @interface LoginController : UIViewController
@@ -11,7 +11,9 @@
 @property (weak, nonatomic) IBOutlet UIButton *loginButton;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *spinner;
 
-- (id)initWithAuthTokenRepository:(AuthTokenRepository *)authTokenRepository
-                    tapRecognizer:(UITapGestureRecognizer *)tapRecognizer;
+- (instancetype)init __attribute__((unavailable("Please use initWithAuthTokenCreator:tapRecognizer: when initializing LoginController")));
+
+- (id)initWithAuthTokenCreator:(id<PDCreationClient>)authTokenCreator
+                 tapRecognizer:(UITapGestureRecognizer *)tapRecognizer;
 
 @end

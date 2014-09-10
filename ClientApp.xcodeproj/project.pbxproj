@@ -7,16 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B84932F7188EEAAC00C06437 /* AuthTokenService.m in Sources */ = {isa = PBXBuildFile; fileRef = B84932F4188EEAAC00C06437 /* AuthTokenService.m */; };
-		B84932FB188EEB1D00C06437 /* AuthenticatedRequestProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = B84932FA188EEB1D00C06437 /* AuthenticatedRequestProvider.m */; };
+		B82CCC9E19C00BA7005AAC92 /* libDeferred.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B8624193188C2A6F00DB172C /* libDeferred.a */; };
+		B82CCC9F19C00BA7005AAC92 /* libJKVValue.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B846BA7A19BFF3F800BF47F4 /* libJKVValue.a */; };
+		B82CCCA019C00BA7005AAC92 /* libPDNetworking.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B846BA4419BF9A8E00BF47F4 /* libPDNetworking.a */; };
+		B846BA6819BFF24600BF47F4 /* AuthTokenDeserializer.m in Sources */ = {isa = PBXBuildFile; fileRef = B846BA6719BFF24600BF47F4 /* AuthTokenDeserializer.m */; };
+		B846BA6B19BFF25700BF47F4 /* AuthTokenSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = B846BA6A19BFF25700BF47F4 /* AuthTokenSerializer.m */; };
+		B846BA6F19BFF3C000BF47F4 /* AuthTokenParams.m in Sources */ = {isa = PBXBuildFile; fileRef = B846BA6E19BFF3C000BF47F4 /* AuthTokenParams.m */; };
 		B8493327188EF0B500C06437 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B8493326188EF0B500C06437 /* AppDelegate.m */; };
-		B8493345188EF15E00C06437 /* AuthTokenDeserializer.m in Sources */ = {isa = PBXBuildFile; fileRef = B8493344188EF15E00C06437 /* AuthTokenDeserializer.m */; };
-		B862419D188C2AA400DB172C /* libDeferred.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B8624193188C2A6F00DB172C /* libDeferred.a */; };
-		B86241EC188EAB1600DB172C /* DomainObjectClient.m in Sources */ = {isa = PBXBuildFile; fileRef = B86241E4188EAB1600DB172C /* DomainObjectClient.m */; };
-		B86241ED188EAB1600DB172C /* HTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = B86241E6188EAB1600DB172C /* HTTPClient.m */; };
-		B86241EE188EAB1600DB172C /* JSONClient.m in Sources */ = {isa = PBXBuildFile; fileRef = B86241E8188EAB1600DB172C /* JSONClient.m */; };
-		B86241EF188EAB1600DB172C /* JSONRequestProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = B86241EA188EAB1600DB172C /* JSONRequestProvider.m */; };
-		B8624216188EAC7D00DB172C /* AuthTokenRepository.m in Sources */ = {isa = PBXBuildFile; fileRef = B8624213188EAC7D00DB172C /* AuthTokenRepository.m */; };
 		B86E1AAB18975DC00076C100 /* LoginController.m in Sources */ = {isa = PBXBuildFile; fileRef = B86E1AA918975DC00076C100 /* LoginController.m */; };
 		B86E1AAC18975DC00076C100 /* LoginController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B86E1AAA18975DC00076C100 /* LoginController.xib */; };
 		B89306DC1854E8CE00F3D74F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B89306DB1854E8CE00F3D74F /* Foundation.framework */; };
@@ -28,12 +25,75 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		B8493323188EEF7B00C06437 /* PBXContainerItemProxy */ = {
+		B82CCCA119C00C9D005AAC92 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = B862418B188C2A6E00DB172C /* Deferred.xcodeproj */;
 			proxyType = 1;
 			remoteGlobalIDString = E18A7B1415674D9B0083D745;
 			remoteInfo = Deferred;
+		};
+		B82CCCA319C00C9D005AAC92 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B846BA7019BFF3F700BF47F4 /* JKVValue.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 1F2CCA8017FCE3D700A382AB;
+			remoteInfo = JKVValue;
+		};
+		B82CCCA519C00C9D005AAC92 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B846BA3B19BF9A8E00BF47F4 /* PDNetworking.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = B85EDE9919BCFDC9001B6AF6;
+			remoteInfo = PDNetworking;
+		};
+		B846BA4319BF9A8E00BF47F4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B846BA3B19BF9A8E00BF47F4 /* PDNetworking.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = B85EDE9A19BCFDC9001B6AF6;
+			remoteInfo = PDNetworking;
+		};
+		B846BA4519BF9A8E00BF47F4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B846BA3B19BF9A8E00BF47F4 /* PDNetworking.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = B878247119BD1B5C00E041FB;
+			remoteInfo = Specs;
+		};
+		B846BA7919BFF3F800BF47F4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B846BA7019BFF3F700BF47F4 /* JKVValue.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 1F2CCA8117FCE3D700A382AB;
+			remoteInfo = JKVValue;
+		};
+		B846BA7B19BFF3F800BF47F4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B846BA7019BFF3F700BF47F4 /* JKVValue.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 1FA39D5318D544AD0066061C;
+			remoteInfo = JKVValueOSX;
+		};
+		B846BA7D19BFF3F800BF47F4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B846BA7019BFF3F700BF47F4 /* JKVValue.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 1FA39D0618D5402E0066061C;
+			remoteInfo = Specs;
+		};
+		B846BA7F19BFF3F800BF47F4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B846BA7019BFF3F700BF47F4 /* JKVValue.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 1FA39D2C18D541ED0066061C;
+			remoteInfo = OSXSpecs;
+		};
+		B846BA8119BFF3F800BF47F4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B846BA7019BFF3F700BF47F4 /* JKVValue.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 1F8561D41983705D00912381;
+			remoteInfo = SpecSuite;
 		};
 		B8624192188C2A6F00DB172C /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -59,33 +119,20 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		B8149A01188F472F007A9E75 /* RequestPromiseClient.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RequestPromiseClient.h; sourceTree = "<group>"; };
-		B8149A02188F491A007A9E75 /* HTTPRequestProvider.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTTPRequestProvider.h; sourceTree = "<group>"; };
-		B84932F3188EEAAC00C06437 /* AuthTokenService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AuthTokenService.h; sourceTree = "<group>"; };
-		B84932F4188EEAAC00C06437 /* AuthTokenService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AuthTokenService.m; sourceTree = "<group>"; };
-		B84932F9188EEB1D00C06437 /* AuthenticatedRequestProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AuthenticatedRequestProvider.h; sourceTree = "<group>"; };
-		B84932FA188EEB1D00C06437 /* AuthenticatedRequestProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AuthenticatedRequestProvider.m; sourceTree = "<group>"; };
+		B846BA3B19BF9A8E00BF47F4 /* PDNetworking.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = PDNetworking.xcodeproj; path = PDNetworking/PDNetworking.xcodeproj; sourceTree = "<group>"; };
+		B846BA6619BFF24600BF47F4 /* AuthTokenDeserializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AuthTokenDeserializer.h; sourceTree = "<group>"; };
+		B846BA6719BFF24600BF47F4 /* AuthTokenDeserializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AuthTokenDeserializer.m; sourceTree = "<group>"; };
+		B846BA6919BFF25700BF47F4 /* AuthTokenSerializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AuthTokenSerializer.h; sourceTree = "<group>"; };
+		B846BA6A19BFF25700BF47F4 /* AuthTokenSerializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AuthTokenSerializer.m; sourceTree = "<group>"; };
+		B846BA6D19BFF3C000BF47F4 /* AuthTokenParams.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AuthTokenParams.h; sourceTree = "<group>"; };
+		B846BA6E19BFF3C000BF47F4 /* AuthTokenParams.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AuthTokenParams.m; sourceTree = "<group>"; };
+		B846BA7019BFF3F700BF47F4 /* JKVValue.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = JKVValue.xcodeproj; path = JKVValue/JKVValue.xcodeproj; sourceTree = "<group>"; };
 		B8493325188EF0B500C06437 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		B8493326188EF0B500C06437 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		B8493343188EF15E00C06437 /* AuthTokenDeserializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AuthTokenDeserializer.h; sourceTree = "<group>"; };
-		B8493344188EF15E00C06437 /* AuthTokenDeserializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AuthTokenDeserializer.m; sourceTree = "<group>"; };
 		B862418B188C2A6E00DB172C /* Deferred.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Deferred.xcodeproj; path = deferred/Deferred.xcodeproj; sourceTree = "<group>"; };
-		B86241E2188EAB1600DB172C /* Deserializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Deserializer.h; sourceTree = "<group>"; };
-		B86241E3188EAB1600DB172C /* DomainObjectClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DomainObjectClient.h; sourceTree = "<group>"; };
-		B86241E4188EAB1600DB172C /* DomainObjectClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DomainObjectClient.m; sourceTree = "<group>"; };
-		B86241E5188EAB1600DB172C /* HTTPClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTTPClient.h; sourceTree = "<group>"; };
-		B86241E6188EAB1600DB172C /* HTTPClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTTPClient.m; sourceTree = "<group>"; };
-		B86241E7188EAB1600DB172C /* JSONClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONClient.h; sourceTree = "<group>"; };
-		B86241E8188EAB1600DB172C /* JSONClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONClient.m; sourceTree = "<group>"; };
-		B86241E9188EAB1600DB172C /* JSONRequestProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONRequestProvider.h; sourceTree = "<group>"; };
-		B86241EA188EAB1600DB172C /* JSONRequestProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONRequestProvider.m; sourceTree = "<group>"; };
-		B86241EB188EAB1600DB172C /* Serializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Serializer.h; sourceTree = "<group>"; };
-		B8624212188EAC7D00DB172C /* AuthTokenRepository.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AuthTokenRepository.h; sourceTree = "<group>"; };
-		B8624213188EAC7D00DB172C /* AuthTokenRepository.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AuthTokenRepository.m; sourceTree = "<group>"; };
 		B86E1AA818975DB60076C100 /* LoginController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginController.h; sourceTree = "<group>"; };
 		B86E1AA918975DC00076C100 /* LoginController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginController.m; sourceTree = "<group>"; };
 		B86E1AAA18975DC00076C100 /* LoginController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginController.xib; sourceTree = "<group>"; };
-		B86E1AAD18975EA80076C100 /* HTTPClientDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTTPClientDelegate.h; sourceTree = "<group>"; };
 		B89306D81854E8CE00F3D74F /* ClientApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ClientApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B89306DB1854E8CE00F3D74F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		B89306DD1854E8CE00F3D74F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -106,29 +153,61 @@
 				B89306DC1854E8CE00F3D74F /* Foundation.framework in Frameworks */,
 				B89306DE1854E8CE00F3D74F /* CoreGraphics.framework in Frameworks */,
 				B89306E01854E8CE00F3D74F /* UIKit.framework in Frameworks */,
-				B862419D188C2AA400DB172C /* libDeferred.a in Frameworks */,
+				B82CCC9E19C00BA7005AAC92 /* libDeferred.a in Frameworks */,
+				B82CCC9F19C00BA7005AAC92 /* libJKVValue.a in Frameworks */,
+				B82CCCA019C00BA7005AAC92 /* libPDNetworking.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		B84932E3188EE97100C06437 /* Mappers */ = {
+		B846BA3C19BF9A8E00BF47F4 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				B8493343188EF15E00C06437 /* AuthTokenDeserializer.h */,
-				B8493344188EF15E00C06437 /* AuthTokenDeserializer.m */,
+				B846BA4419BF9A8E00BF47F4 /* libPDNetworking.a */,
+				B846BA4619BF9A8E00BF47F4 /* Specs.octest */,
 			);
-			path = Mappers;
+			name = Products;
 			sourceTree = "<group>";
 		};
-		B84932F2188EEA4300C06437 /* Services */ = {
+		B846BA6419BFF1F800BF47F4 /* Serializers */ = {
 			isa = PBXGroup;
 			children = (
-				B84932F3188EEAAC00C06437 /* AuthTokenService.h */,
-				B84932F4188EEAAC00C06437 /* AuthTokenService.m */,
+				B846BA6919BFF25700BF47F4 /* AuthTokenSerializer.h */,
+				B846BA6A19BFF25700BF47F4 /* AuthTokenSerializer.m */,
 			);
-			path = Services;
+			path = Serializers;
+			sourceTree = "<group>";
+		};
+		B846BA6519BFF20000BF47F4 /* Deserializers */ = {
+			isa = PBXGroup;
+			children = (
+				B846BA6619BFF24600BF47F4 /* AuthTokenDeserializer.h */,
+				B846BA6719BFF24600BF47F4 /* AuthTokenDeserializer.m */,
+			);
+			path = Deserializers;
+			sourceTree = "<group>";
+		};
+		B846BA6C19BFF39E00BF47F4 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				B846BA6D19BFF3C000BF47F4 /* AuthTokenParams.h */,
+				B846BA6E19BFF3C000BF47F4 /* AuthTokenParams.m */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		B846BA7119BFF3F700BF47F4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B846BA7A19BFF3F800BF47F4 /* libJKVValue.a */,
+				B846BA7C19BFF3F800BF47F4 /* JKVValue.framework */,
+				B846BA7E19BFF3F800BF47F4 /* Specs.xctest */,
+				B846BA8019BFF3F800BF47F4 /* OSXSpecs.xctest */,
+				B846BA8219BFF3F800BF47F4 /* SpecSuite.app */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 		B84932FC188EEB2700C06437 /* UI */ = {
@@ -163,6 +242,8 @@
 			isa = PBXGroup;
 			children = (
 				B862418B188C2A6E00DB172C /* Deferred.xcodeproj */,
+				B846BA7019BFF3F700BF47F4 /* JKVValue.xcodeproj */,
+				B846BA3B19BF9A8E00BF47F4 /* PDNetworking.xcodeproj */,
 			);
 			path = Externals;
 			sourceTree = "<group>";
@@ -177,53 +258,14 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		B86241E1188EAA9E00DB172C /* Networking */ = {
-			isa = PBXGroup;
-			children = (
-				B84932F9188EEB1D00C06437 /* AuthenticatedRequestProvider.h */,
-				B84932FA188EEB1D00C06437 /* AuthenticatedRequestProvider.m */,
-				B86241E2188EAB1600DB172C /* Deserializer.h */,
-				B86241E3188EAB1600DB172C /* DomainObjectClient.h */,
-				B86241E4188EAB1600DB172C /* DomainObjectClient.m */,
-				B86241E5188EAB1600DB172C /* HTTPClient.h */,
-				B86241E6188EAB1600DB172C /* HTTPClient.m */,
-				B86E1AAD18975EA80076C100 /* HTTPClientDelegate.h */,
-				B8149A02188F491A007A9E75 /* HTTPRequestProvider.h */,
-				B86241E7188EAB1600DB172C /* JSONClient.h */,
-				B86241E8188EAB1600DB172C /* JSONClient.m */,
-				B86241E9188EAB1600DB172C /* JSONRequestProvider.h */,
-				B86241EA188EAB1600DB172C /* JSONRequestProvider.m */,
-				B8149A01188F472F007A9E75 /* RequestPromiseClient.h */,
-				B86241EB188EAB1600DB172C /* Serializer.h */,
-			);
-			path = Networking;
-			sourceTree = "<group>";
-		};
 		B8624210188EAC1A00DB172C /* Domain */ = {
 			isa = PBXGroup;
 			children = (
-				B84932E3188EE97100C06437 /* Mappers */,
-				B8624218188EAC9600DB172C /* Models */,
-				B8624211188EAC3900DB172C /* Repositories */,
-				B84932F2188EEA4300C06437 /* Services */,
+				B846BA6519BFF20000BF47F4 /* Deserializers */,
+				B846BA6C19BFF39E00BF47F4 /* Models */,
+				B846BA6419BFF1F800BF47F4 /* Serializers */,
 			);
 			path = Domain;
-			sourceTree = "<group>";
-		};
-		B8624211188EAC3900DB172C /* Repositories */ = {
-			isa = PBXGroup;
-			children = (
-				B8624212188EAC7D00DB172C /* AuthTokenRepository.h */,
-				B8624213188EAC7D00DB172C /* AuthTokenRepository.m */,
-			);
-			path = Repositories;
-			sourceTree = "<group>";
-		};
-		B8624218188EAC9600DB172C /* Models */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Models;
 			sourceTree = "<group>";
 		};
 		B89306CF1854E8CE00F3D74F = {
@@ -260,7 +302,6 @@
 			children = (
 				B8624210188EAC1A00DB172C /* Domain */,
 				B89306F31854E8CE00F3D74F /* Images.xcassets */,
-				B86241E1188EAA9E00DB172C /* Networking */,
 				B89306E21854E8CE00F3D74F /* Supporting Files */,
 				B84932FC188EEB2700C06437 /* UI */,
 			);
@@ -292,7 +333,9 @@
 			buildRules = (
 			);
 			dependencies = (
-				B8493324188EEF7B00C06437 /* PBXTargetDependency */,
+				B82CCCA219C00C9D005AAC92 /* PBXTargetDependency */,
+				B82CCCA419C00C9D005AAC92 /* PBXTargetDependency */,
+				B82CCCA619C00C9D005AAC92 /* PBXTargetDependency */,
 			);
 			name = ClientApp;
 			productName = Reservations;
@@ -305,7 +348,7 @@
 		B89306D01854E8CE00F3D74F /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0500;
+				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = "Prairiedogg International Limited";
 				TargetAttributes = {
 					B89306D71854E8CE00F3D74F = {
@@ -329,6 +372,14 @@
 					ProductGroup = B862418C188C2A6E00DB172C /* Products */;
 					ProjectRef = B862418B188C2A6E00DB172C /* Deferred.xcodeproj */;
 				},
+				{
+					ProductGroup = B846BA7119BFF3F700BF47F4 /* Products */;
+					ProjectRef = B846BA7019BFF3F700BF47F4 /* JKVValue.xcodeproj */;
+				},
+				{
+					ProductGroup = B846BA3C19BF9A8E00BF47F4 /* Products */;
+					ProjectRef = B846BA3B19BF9A8E00BF47F4 /* PDNetworking.xcodeproj */;
+				},
 			);
 			projectRoot = "";
 			targets = (
@@ -338,6 +389,55 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
+		B846BA4419BF9A8E00BF47F4 /* libPDNetworking.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libPDNetworking.a;
+			remoteRef = B846BA4319BF9A8E00BF47F4 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		B846BA4619BF9A8E00BF47F4 /* Specs.octest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = Specs.octest;
+			remoteRef = B846BA4519BF9A8E00BF47F4 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		B846BA7A19BFF3F800BF47F4 /* libJKVValue.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libJKVValue.a;
+			remoteRef = B846BA7919BFF3F800BF47F4 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		B846BA7C19BFF3F800BF47F4 /* JKVValue.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = JKVValue.framework;
+			remoteRef = B846BA7B19BFF3F800BF47F4 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		B846BA7E19BFF3F800BF47F4 /* Specs.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = Specs.xctest;
+			remoteRef = B846BA7D19BFF3F800BF47F4 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		B846BA8019BFF3F800BF47F4 /* OSXSpecs.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = OSXSpecs.xctest;
+			remoteRef = B846BA7F19BFF3F800BF47F4 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		B846BA8219BFF3F800BF47F4 /* SpecSuite.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = SpecSuite.app;
+			remoteRef = B846BA8119BFF3F800BF47F4 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		B8624193188C2A6F00DB172C /* libDeferred.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
@@ -381,25 +481,30 @@
 			files = (
 				B8493327188EF0B500C06437 /* AppDelegate.m in Sources */,
 				B86E1AAB18975DC00076C100 /* LoginController.m in Sources */,
-				B84932F7188EEAAC00C06437 /* AuthTokenService.m in Sources */,
-				B8624216188EAC7D00DB172C /* AuthTokenRepository.m in Sources */,
 				B89306E81854E8CE00F3D74F /* main.m in Sources */,
-				B86241EF188EAB1600DB172C /* JSONRequestProvider.m in Sources */,
-				B86241EE188EAB1600DB172C /* JSONClient.m in Sources */,
-				B86241EC188EAB1600DB172C /* DomainObjectClient.m in Sources */,
-				B8493345188EF15E00C06437 /* AuthTokenDeserializer.m in Sources */,
-				B84932FB188EEB1D00C06437 /* AuthenticatedRequestProvider.m in Sources */,
-				B86241ED188EAB1600DB172C /* HTTPClient.m in Sources */,
+				B846BA6819BFF24600BF47F4 /* AuthTokenDeserializer.m in Sources */,
+				B846BA6F19BFF3C000BF47F4 /* AuthTokenParams.m in Sources */,
+				B846BA6B19BFF25700BF47F4 /* AuthTokenSerializer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		B8493324188EEF7B00C06437 /* PBXTargetDependency */ = {
+		B82CCCA219C00C9D005AAC92 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = Deferred;
-			targetProxy = B8493323188EEF7B00C06437 /* PBXContainerItemProxy */;
+			targetProxy = B82CCCA119C00C9D005AAC92 /* PBXContainerItemProxy */;
+		};
+		B82CCCA419C00C9D005AAC92 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = JKVValue;
+			targetProxy = B82CCCA319C00C9D005AAC92 /* PBXContainerItemProxy */;
+		};
+		B82CCCA619C00C9D005AAC92 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = PDNetworking;
+			targetProxy = B82CCCA519C00C9D005AAC92 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -449,7 +554,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				ONLY_ACTIVE_ARCH = YES;
+				ONLY_ACTIVE_ARCH = NO;
 				SDKROOT = iphoneos;
 				USER_HEADER_SEARCH_PATHS = "\"$PROJECT_DIR/Externals/deferred/Deferred/\"";
 			};
@@ -470,7 +575,11 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = "ClientApp/ClientApp-Info.plist";
+				LIBRARY_SEARCH_PATHS = "\"$(SYMROOT)/Release$(EFFECTIVE_PLATFORM_NAME)\"";
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_LDFLAGS = "";
 				PRODUCT_NAME = ClientApp;
+				USER_HEADER_SEARCH_PATHS = "\"$PROJECT_DIR/Externals/deferred/Deferred/\" \"$PROJECT_DIR/Externals/PDNetworking/PDNetworking/\" \"$PROJECT_DIR/Externals/JKVValue/JKVValue/Public/\"";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Local;
@@ -509,7 +618,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				ONLY_ACTIVE_ARCH = YES;
+				ONLY_ACTIVE_ARCH = NO;
 				SDKROOT = iphoneos;
 				USER_HEADER_SEARCH_PATHS = "\"$PROJECT_DIR/Externals/deferred/Deferred/\"";
 			};
@@ -559,7 +668,11 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ClientApp/ClientApp-Prefix.pch";
 				INFOPLIST_FILE = "ClientApp/ClientApp-Info.plist";
+				LIBRARY_SEARCH_PATHS = "\"$(SYMROOT)/Release$(EFFECTIVE_PLATFORM_NAME)\"";
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_LDFLAGS = "";
 				PRODUCT_NAME = ClientApp;
+				USER_HEADER_SEARCH_PATHS = "\"$PROJECT_DIR/Externals/deferred/Deferred/\" \"$PROJECT_DIR/Externals/PDNetworking/PDNetworking/\" \"$PROJECT_DIR/Externals/JKVValue/JKVValue/Public/\"";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -574,7 +687,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ClientApp/ClientApp-Prefix.pch";
 				INFOPLIST_FILE = "ClientApp/ClientApp-Info.plist";
+				LIBRARY_SEARCH_PATHS = "\"$(SYMROOT)/Release$(EFFECTIVE_PLATFORM_NAME)\"";
+				OTHER_LDFLAGS = "";
 				PRODUCT_NAME = ClientApp;
+				USER_HEADER_SEARCH_PATHS = "\"$PROJECT_DIR/Externals/deferred/Deferred/\" \"$PROJECT_DIR/Externals/PDNetworking/PDNetworking/\" \"$PROJECT_DIR/Externals/JKVValue/JKVValue/Public/\"";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

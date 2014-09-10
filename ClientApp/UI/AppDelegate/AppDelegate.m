@@ -1,52 +1,83 @@
 #import "AppDelegate.h"
 #import "LoginController.h"
-#import "AuthTokenRepository.h"
-#import "AuthTokenService.h"
-#import "JSONRequestProvider.h"
-#import "HTTPClient.h"
-#import "JSONClient.h"
-#import "DomainObjectClient.h"
-#import "Deserializer.h"
 #import "AuthTokenDeserializer.h"
-#import "RequestPromiseClient.h"
-#import "HTTPClientDelegate.h"
+#import "PDNetworkResourceProvider.h"
+#import "AuthTokenSerializer.h"
+#import "AuthTokenDeserializer.h"
+#import "PDDeserializer.h"
+#import "PDNetworkClientProvider.h"
+#import "PDCreationClient.h"
+#import "PDDomainObjectClient.h"
+#import "PDURLSessionClient.h"
+#import "PDHTTPClient.h"
+#import "PDJSONClient.h"
+#import "PDJSONRequestProvider.h"
+#import "PDURLSessionClientDelegate.h"
+#import "PDParameterToQueryStringEncoder.h"
 
 
-@interface AppDelegate () <HTTPClientDelegate>
+@interface AppDelegate () <PDURLSessionClientDelegate>
 @end
+
+
+static NSString *const httpErrorDomain = @"com.myapp.http";
 
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    NSURLComponents *urlComponents = [self urlComponents];
+    PDNetworkResourceProvider *networkResourceProvider = [[PDNetworkResourceProvider alloc] init];
+    PDNetworkClientProvider *networkClientProvider = [[PDNetworkClientProvider alloc] init];
     
+    // NSOperationQueues
+    //
+    NSOperationQueue *mainQueue = [NSOperationQueue mainQueue];
+    
+    
+    // Paths
+    //
+    NSString * (^authTokenPathBlock) (NSString *) = ^ NSString *(__unused id requestParams) { return @"/api/auth/token/"; };
+    
+    // Serializers
+    //
+    id<PDRequestParametersSerializer> createAuthTokenRequestParametersSerializer = [[AuthTokenSerializer alloc] init];
+    
+    // Deserializers
+    //
+    id<PDDeserializer> authTokenDeserializer = [[AuthTokenDeserializer alloc] init];
+    
+    // Network Resources
+    //
+    id<PDNetworkResource> createAuthTokenResource = [networkResourceProvider creationResourceWithPathConfigurationBlock:authTokenPathBlock
+                                                                                            requestParametersSerializer:createAuthTokenRequestParametersSerializer
+                                                                                                           deserializer:authTokenDeserializer];
+    
+    // PDRequesters
+    //
     NSURLSessionConfiguration *sessionConfiguration = [NSURLSessionConfiguration defaultSessionConfiguration];
     NSURLSession *session = [NSURLSession sessionWithConfiguration:sessionConfiguration];
-    NSOperationQueue *mainQueue = [NSOperationQueue mainQueue];
     NSIndexSet *acceptableStatusCodes = [NSIndexSet indexSetWithIndexesInRange:NSMakeRange(100, 200)];
     
-    id<HTTPRequestProvider> jsonRequestProvider = [[JSONRequestProvider alloc] initWithURLComponents:urlComponents];
+    PDURLSessionClient *URLSessionClient = [[PDURLSessionClient alloc] initWithURLSession:session queue:mainQueue];
+    URLSessionClient.delegate = self;
+    id<PDRequester> HTTPClient = [[PDHTTPClient alloc] initWithRequester:URLSessionClient acceptableStatusCodes:acceptableStatusCodes errorDomain:httpErrorDomain];
+    id<PDRequester> JSONClient = [[PDJSONClient alloc] initWithRequester:HTTPClient];
     
-    
-    HTTPClient *httpClient = [[HTTPClient alloc] initWithSession:session
-                                                                         queue:mainQueue
-                                                         acceptableStatusCodes:acceptableStatusCodes];
-    httpClient.delegate = self;
-    
-    id <RequestPromiseClient> jsonClient = [[JSONClient alloc] initWithRequestPromiseClient:httpClient];
-    DomainObjectClient *domainObjectClient = [[DomainObjectClient alloc] initWithRequestPromiseClient:jsonClient];
-    
-    id <Deserializer> authTokenDeserializer = [[AuthTokenDeserializer alloc] init];
-    AuthTokenService *authTokenService = [[AuthTokenService alloc] initWithRequestProvider:jsonRequestProvider
-                                                                        domainObjectClient:domainObjectClient
-                                                                              deserializer:authTokenDeserializer];
-    AuthTokenRepository *authTokenRepository = [[AuthTokenRepository alloc] initWithAuthTokenService:authTokenService];
-    
+    NSURLComponents *URLComponents = [self urlComponents];
+    PDParameterToQueryStringEncoder *parameterEncoder = [[PDParameterToQueryStringEncoder alloc] initWithStringEncoding:NSUTF8StringEncoding];
+    id<PDRequestProvider> JSONRequestProvider = [[PDJSONRequestProvider alloc] initWithURLComponents:URLComponents parameterEncoder:parameterEncoder];
+    PDDomainObjectClient *domainObjectClient = [[PDDomainObjectClient alloc] initWithRequester:JSONClient
+                                                                               requestProvider:JSONRequestProvider
+                                                                                         queue:mainQueue];
+    // Network clients
+    //
+    id<PDCreationClient> authTokenCreator = [networkClientProvider networkClientWithNetworkResource:createAuthTokenResource
+                                                                                 domainObjectClient:domainObjectClient
+                                                                                    requestProvider:JSONRequestProvider];
+
     UITapGestureRecognizer *tapRecognizer = [[UITapGestureRecognizer alloc] init];
-    LoginController *loginController = [[LoginController alloc] initWithAuthTokenRepository:authTokenRepository
-                                                                              tapRecognizer:tapRecognizer];
+    LoginController *loginController = [[LoginController alloc] initWithAuthTokenCreator:authTokenCreator tapRecognizer:tapRecognizer];
     
     UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:loginController];
     
@@ -57,18 +88,22 @@
     return YES;
 }
 
-#pragma mark - <HTTPClientDelegate>
+#pragma mark - <PDURLSessionClientDelegate>
 
-- (void)httpClient:(HTTPClient *)httpClient didSendRequest:(NSURLRequest *)request
+- (void)URLSessionClient:(PDURLSessionClient *)client
+          didSendRequest:(NSURLRequest *)request
 {
     UIApplication *application = [UIApplication sharedApplication];
     application.networkActivityIndicatorVisible = YES;
 }
 
-- (void)httpClient:(HTTPClient *)httpClient didUpdateTaskCount:(NSUInteger)updatedTaskCount
+- (void)URLSessionClient:(PDURLSessionClient *)client
+      didUpdateDataTasks:(NSArray *)dataTasks
+             uploadTasks:(NSArray *)uploadTasks
+           downloadTasks:(NSArray *)downloadTasks
 {
     UIApplication *application = [UIApplication sharedApplication];
-    application.networkActivityIndicatorVisible = updatedTaskCount > 0;
+    application.networkActivityIndicatorVisible = dataTasks.count > 0;
 }
 
 #pragma mark - Private

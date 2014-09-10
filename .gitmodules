@@ -4,3 +4,9 @@
 [submodule "Externals/django-rest-framework-api-server"]
 	path = Externals/django-rest-framework-api-server
 	url = git@github.com:wileykestner/django-rest-framework-api-server.git
+[submodule "Externals/PDNetworking"]
+	path = Externals/PDNetworking
+	url = git@github.com:wileykestner/PDNetworking.git
+[submodule "Externals/JKVValue"]
+	path = Externals/JKVValue
+	url = https://github.com/jeffh/JKVValue.git
