@@ -34,10 +34,6 @@ static NSString *const httpErrorDomain = @"com.myapp.http";
     //
     NSOperationQueue *mainQueue = [NSOperationQueue mainQueue];
     
-    // Paths
-    //
-    NSString * (^authTokenPathBlock) (NSString *) = ^ NSString *(__unused id requestParams) { return @"/api/auth/token/"; };
-    
     // Serializers
     //
     id<PDRequestParametersSerializer> createAuthTokenRequestParametersSerializer = [[AuthTokenSerializer alloc] init];
@@ -45,6 +41,10 @@ static NSString *const httpErrorDomain = @"com.myapp.http";
     // Deserializers
     //
     id<PDDeserializer> authTokenDeserializer = [[AuthTokenDeserializer alloc] init];
+    
+    // Paths
+    //
+    NSString * (^authTokenPathBlock) (NSString *) = ^ NSString *(__unused id requestParams) { return @"/api/auth/token/"; };
     
     // Network Resources
     //
@@ -65,7 +65,8 @@ static NSString *const httpErrorDomain = @"com.myapp.http";
     
     NSURLComponents *URLComponents = [self urlComponents];
     PDParameterToQueryStringEncoder *parameterEncoder = [[PDParameterToQueryStringEncoder alloc] initWithStringEncoding:NSUTF8StringEncoding];
-    id<PDRequestProvider> JSONRequestProvider = [[PDJSONRequestProvider alloc] initWithURLComponents:URLComponents parameterEncoder:parameterEncoder];
+    id<PDRequestProvider> JSONRequestProvider = [[PDJSONRequestProvider alloc] initWithURLComponents:URLComponents
+                                                                                    parameterEncoder:parameterEncoder];
     PDDomainObjectClient *domainObjectClient = [[PDDomainObjectClient alloc] initWithRequester:JSONClient
                                                                                requestProvider:JSONRequestProvider
                                                                                          queue:mainQueue];

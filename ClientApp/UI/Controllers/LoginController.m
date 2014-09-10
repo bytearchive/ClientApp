@@ -2,6 +2,7 @@
 #import "KSPromise.h"
 #import "PDCreationClient.h"
 #import "AuthTokenParams.h"
+#import "PDHTTPClient.h"
 
 
 @interface LoginController () <UITextFieldDelegate>
@@ -89,11 +90,9 @@
     
     AuthTokenParams *authTokenParams = [[AuthTokenParams alloc] initWithUsername:username password:password];
     KSPromise *promise = [self.authTokenCreator creationPromiseWithRequestParameters:authTokenParams];
-    __weak typeof(self) weakSelf = self;
     [promise then:^id(NSString *authToken) {
-        __strong typeof(weakSelf) strongSelf = weakSelf;
-        strongSelf.view.userInteractionEnabled = YES;
-        [strongSelf.spinner stopAnimating];
+        self.view.userInteractionEnabled = YES;
+        [self.spinner stopAnimating];
         NSString *successString = [NSString stringWithFormat:@"here's your auth token: %@", authToken];
         UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"You logged in successfully"
                                                             message:successString
@@ -104,11 +103,38 @@
         
         return authToken;
     } error:^id(NSError *error) {
-        __strong typeof(weakSelf) strongSelf = weakSelf;
-        strongSelf.view.userInteractionEnabled = YES;
-        [strongSelf.spinner stopAnimating];
+        NSDictionary *userInfo = error.userInfo;
+        NSData *errorData = userInfo[PDHTTPClientErrorDataKey];
+        NSError *deserializationError;
+        NSDictionary *serverErrorDictionary = [NSJSONSerialization JSONObjectWithData:errorData options:0 error:&deserializationError];
+        
+        NSArray *usernameErrors = serverErrorDictionary[@"username"];
+        NSArray *passwordErrors = serverErrorDictionary[@"password"];
+        NSArray *nonFieldErrors = serverErrorDictionary[@"non_field_errors"];
+        
+        NSMutableString *errorMessageString = [[NSMutableString alloc] init];
+        if (usernameErrors) {
+            NSString *usernameErrorString = [NSString stringWithFormat:@"Username: %@\n", [usernameErrors componentsJoinedByString:@", "]];
+            [errorMessageString appendString:usernameErrorString];
+        }
+        
+        if (passwordErrors) {
+            NSString *passwordErrorString = [NSString stringWithFormat:@"Password: %@\n", [passwordErrors componentsJoinedByString:@", "]];
+            [errorMessageString appendString:passwordErrorString];
+        }
+        
+        ;
+        if (nonFieldErrors) {
+            NSString *nonFieldErrorsString = [nonFieldErrors componentsJoinedByString:@", "];
+            [errorMessageString appendString:nonFieldErrorsString];
+        }
+        NSString *errorMessage = [NSString stringWithFormat:@"There was a problem logging in\n\n%@", errorMessageString];
+        
+        self.view.userInteractionEnabled = YES;
+        [self.spinner stopAnimating];
+        
         UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Login Problem"
-                                                            message:@"There was a problem logging in, please try again."
+                                                            message:errorMessage
                                                            delegate:nil
                                                   cancelButtonTitle:@"OK"
                                                   otherButtonTitles:nil];
