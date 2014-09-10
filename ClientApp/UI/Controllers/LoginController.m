@@ -103,32 +103,39 @@
         
         return authToken;
     } error:^id(NSError *error) {
+        
+        NSString *errorMessage;
         NSDictionary *userInfo = error.userInfo;
         NSData *errorData = userInfo[PDHTTPClientErrorDataKey];
-        NSError *deserializationError;
-        NSDictionary *serverErrorDictionary = [NSJSONSerialization JSONObjectWithData:errorData options:0 error:&deserializationError];
-        
-        NSArray *usernameErrors = serverErrorDictionary[@"username"];
-        NSArray *passwordErrors = serverErrorDictionary[@"password"];
-        NSArray *nonFieldErrors = serverErrorDictionary[@"non_field_errors"];
-        
-        NSMutableString *errorMessageString = [[NSMutableString alloc] init];
-        if (usernameErrors) {
-            NSString *usernameErrorString = [NSString stringWithFormat:@"Username: %@\n", [usernameErrors componentsJoinedByString:@", "]];
-            [errorMessageString appendString:usernameErrorString];
+        if (errorData) {
+            NSError *deserializationError;
+            NSDictionary *serverErrorDictionary = [NSJSONSerialization JSONObjectWithData:errorData options:0 error:&deserializationError];
+            
+            NSArray *usernameErrors = serverErrorDictionary[@"username"];
+            NSArray *passwordErrors = serverErrorDictionary[@"password"];
+            NSArray *nonFieldErrors = serverErrorDictionary[@"non_field_errors"];
+            
+            NSMutableString *errorMessageString = [[NSMutableString alloc] init];
+            if (usernameErrors) {
+                NSString *usernameErrorString = [NSString stringWithFormat:@"Username: %@\n", [usernameErrors componentsJoinedByString:@", "]];
+                [errorMessageString appendString:usernameErrorString];
+            }
+            
+            if (passwordErrors) {
+                NSString *passwordErrorString = [NSString stringWithFormat:@"Password: %@\n", [passwordErrors componentsJoinedByString:@", "]];
+                [errorMessageString appendString:passwordErrorString];
+            }
+            
+            ;
+            if (nonFieldErrors) {
+                NSString *nonFieldErrorsString = [nonFieldErrors componentsJoinedByString:@", "];
+                [errorMessageString appendString:nonFieldErrorsString];
+            }
+            errorMessage = errorMessageString;
         }
-        
-        if (passwordErrors) {
-            NSString *passwordErrorString = [NSString stringWithFormat:@"Password: %@\n", [passwordErrors componentsJoinedByString:@", "]];
-            [errorMessageString appendString:passwordErrorString];
+        else {
+            errorMessage = error.localizedDescription;
         }
-        
-        ;
-        if (nonFieldErrors) {
-            NSString *nonFieldErrorsString = [nonFieldErrors componentsJoinedByString:@", "];
-            [errorMessageString appendString:nonFieldErrorsString];
-        }
-        NSString *errorMessage = [NSString stringWithFormat:@"There was a problem logging in\n\n%@", errorMessageString];
         
         self.view.userInteractionEnabled = YES;
         [self.spinner stopAnimating];
