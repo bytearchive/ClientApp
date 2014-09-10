@@ -14,7 +14,7 @@ Quick start
 To install and run the development server:
 
     git submodule update --init --recursive
-    ./bin/setup_server.sh
-    ./bin/manage.sh createsuperuser
-    ./bin/server.sh
+    ./scripts/setup_server.sh
+    ./scripts/manage.sh createsuperuser
+    ./scripts/server.sh
 
